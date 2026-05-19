@@ -450,12 +450,20 @@
 
 
 
+<script>
+(function() {
+  const p = new URLSearchParams(window.location.search).get('lang');
+  if (p && ['fr','en','es','de','pt','ru'].includes(p)) {
+    localStorage.setItem('suncom_lang', p);
+  }
+})();
+</script>
 <script src="lang.js?v=5"></script>
 
 <!-- Buyest widget -->
 <div class="buyest-widget">
   <div class="buyest-label"><span style="color:#F0A500; font-size:16px; text-shadow:none;">⌱</span>&nbsp;&nbsp;<span data-i18n="buyest_cta">Consulter les annonces</span></div>
-  <a href="http://localhost:3002" target="_blank" class="buyest-btn">
+  <a href="https://buyest-io.vercel.app" target="_blank" class="buyest-btn">
     <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M1 9L11 1L21 9V19C21 19.5523 20.5523 20 20 20H14V14H8V20H2C1.44772 20 1 19.5523 1 19V9Z" stroke="#00D4B8" stroke-width="1.5" stroke-linejoin="round"/>
       <circle cx="17" cy="5" r="3" fill="#F0A500"/>
@@ -477,12 +485,17 @@
     gap: 6px;
   }
   .buyest-label {
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: rgba(255,255,255,1); font-size: 12px; text-shadow: 0 0 10px rgba(255,255,255,0.8), 0 0 25px rgba(255,255,255,0.4);
+    color: var(--text-main);
+    text-shadow: none;
     font-family: 'DM Sans', sans-serif;
     font-weight: 400;
+  }
+  body.dark .buyest-label {
+    color: rgba(255,255,255,0.9);
+    text-shadow: 0 0 10px rgba(255,255,255,0.8), 0 0 25px rgba(255,255,255,0.4);
   }
   .buyest-btn {
     display: flex;

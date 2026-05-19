@@ -563,7 +563,7 @@ const SUNCOM_LANGS = {
 
 const LANG_META = {
   fr: { flag: '🇫🇷', label: 'Français' },
-  en: { flag: '🇬🇧', label: 'English' },
+  en: { flag: '🇺🇸', label: 'English' },
   de: { flag: '🇩🇪', label: 'Deutsch' },
   es: { flag: '🇪🇸', label: 'Español' },
   pt: { flag: '🇵🇹', label: 'Português' },
@@ -596,7 +596,11 @@ function initLangSelector() {
   const container = document.getElementById('langSelector');
   if (!container) return;
 
-  const saved = localStorage.getItem('suncom_lang') || 'fr';
+  // Forcer EN si aucune langue n'a été explicitement choisie par l'utilisateur
+  if (!localStorage.getItem('suncom_lang_chosen')) {
+    localStorage.setItem('suncom_lang', 'en');
+  }
+  const saved = localStorage.getItem('suncom_lang') || 'en';
 
   // Bouton
   const btn = document.createElement('button');
@@ -617,6 +621,7 @@ function initLangSelector() {
     item.onmouseenter = () => item.style.background = 'rgba(0,201,177,0.08)';
     item.onmouseleave = () => item.style.background = 'none';
     item.onclick = () => {
+      localStorage.setItem('suncom_lang_chosen', '1');
       applyLang(code);
       dropdown.style.display = 'none';
     };

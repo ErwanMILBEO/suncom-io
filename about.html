@@ -290,6 +290,14 @@ function toggleBio(btn) {
 }
 </script>
 
+<script>
+(function() {
+  const p = new URLSearchParams(window.location.search).get('lang');
+  if (p && ['fr','en','es','de','pt','ru'].includes(p)) {
+    localStorage.setItem('suncom_lang', p);
+  }
+})();
+</script>
 <script src="lang.js?v=4"></script>
 </body>
 </html>
