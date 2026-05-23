@@ -580,7 +580,8 @@ function playSuncomJingle() {
   });
 }
 // Jingle au clic sur le widget Buyest — délai avant navigation
-document.addEventListener('DOMContentLoaded', function() {
+// (script en bas de page : pas besoin d'attendre DOMContentLoaded)
+(function() {
   var btn = document.querySelector('.buyest-btn');
   if (btn) btn.addEventListener('click', function(e) {
     e.preventDefault();
@@ -589,7 +590,7 @@ document.addEventListener('DOMContentLoaded', function() {
       window.open('https://buyest-io.vercel.app', '_blank');
     }, 1700);
   });
-});
+})();
 </script>
 
 </body></html>
