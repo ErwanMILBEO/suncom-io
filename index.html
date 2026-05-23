@@ -313,7 +313,7 @@
 <body class="dark">
 
 <nav>
-  <a href="index.html" class="nav-logo">SUN<span>COM</span></a>
+  <a href="index.html" class="nav-logo" id="suncom-logo">SUN<span>COM</span></a>
   <span class="nav-tagline">Here comes the sun</span>
   <div class="nav-right">
     <button class="theme-toggle" id="themeToggle">
@@ -542,5 +542,57 @@
     padding-left: 10px;
   }
 </style>
+<script>
+// ── SUNCOM Jingle ────────────────────────────────────────────
+function playSuncomJingle() {
+  const ctx = new (window.AudioContext || window.webkitAudioContext)();
+  function createReverb(ctx, duration, decay) {
+    const len = ctx.sampleRate * duration;
+    const buf = ctx.createBuffer(2, len, ctx.sampleRate);
+    for (let c = 0; c < 2; c++) {
+      const d = buf.getChannelData(c);
+      for (let i = 0; i < len; i++)
+        d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, decay);
+    }
+    const conv = ctx.createConvolver(); conv.buffer = buf; return conv;
+  }
+  const reverb = createReverb(ctx, 1.6, 3.0);
+  const master = ctx.createGain(), dryGain = ctx.createGain(), wetGain = ctx.createGain();
+  dryGain.gain.value = 0.5; wetGain.gain.value = 0.5; master.gain.value = 0.85;
+  reverb.connect(wetGain); wetGain.connect(master);
+  dryGain.connect(master); master.connect(ctx.destination);
+  const B4 = 466.16, A4 = 415.30, G4 = 369.99;
+  [
+    { freq: B4, time: 0.00, dur: 0.24 },
+    { freq: A4, time: 0.27, dur: 0.24 },
+    { freq: B4, time: 0.54, dur: 0.24 },
+    { freq: G4, time: 0.81, dur: 0.65 },
+  ].forEach(({ freq, time, dur }) => {
+    [[1, 0.26, dur+0.2], [2, 0.05, dur*0.5], [0.5, 0.09, dur*0.8]].forEach(([mult, vol, d]) => {
+      const osc = ctx.createOscillator(), g = ctx.createGain();
+      osc.type = 'sine'; osc.frequency.setValueAtTime(freq * mult, ctx.currentTime + time);
+      g.gain.setValueAtTime(0, ctx.currentTime + time);
+      g.gain.linearRampToValueAtTime(vol, ctx.currentTime + time + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + time + d);
+      osc.connect(g); g.connect(dryGain); g.connect(reverb);
+      osc.start(ctx.currentTime + time); osc.stop(ctx.currentTime + time + d + 0.4);
+    });
+  });
+}
+// A — premier clic sur la page
+document.addEventListener('click', function firstClick() {
+  playSuncomJingle();
+  document.removeEventListener('click', firstClick);
+}, { once: true });
+// B — clic sur le logo (rejoue à chaque fois)
+document.addEventListener('DOMContentLoaded', function() {
+  var logo = document.getElementById('suncom-logo');
+  if (logo) logo.addEventListener('click', function(e) {
+    e.preventDefault();
+    playSuncomJingle();
+    setTimeout(function() { window.location.href = logo.href; }, 1600);
+  });
+});
+</script>
 
 </body></html>
