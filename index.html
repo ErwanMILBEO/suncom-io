@@ -579,18 +579,11 @@ function playSuncomJingle() {
     });
   });
 }
-// A — premier clic sur la page
-document.addEventListener('click', function firstClick() {
-  playSuncomJingle();
-  document.removeEventListener('click', firstClick);
-}, { once: true });
-// B — clic sur le logo (rejoue à chaque fois)
+// Jingle au clic sur le widget Buyest uniquement
 document.addEventListener('DOMContentLoaded', function() {
-  var logo = document.getElementById('suncom-logo');
-  if (logo) logo.addEventListener('click', function(e) {
-    e.preventDefault();
+  var btn = document.querySelector('.buyest-btn');
+  if (btn) btn.addEventListener('click', function() {
     playSuncomJingle();
-    setTimeout(function() { window.location.href = logo.href; }, 1600);
   });
 });
 </script>
