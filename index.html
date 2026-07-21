@@ -303,7 +303,7 @@
 
   @media (max-width: 700px) {
     nav { padding: 0 1.25rem; }
-    .nav-tagline { display: none; }
+    .nav-tagline { font-size: 8px; letter-spacing: 0.1em; }
     .grid-section { padding: 0 0 4rem; }
     .grid { grid-template-columns: 1fr; }
     .bloc { padding: 2rem; }
@@ -314,8 +314,10 @@
 <body class="dark">
 
 <nav>
-  <a href="index.html" class="nav-logo" id="suncom-logo">SUN<span>COM</span></a>
-  <span class="nav-tagline">Here comes the sun</span>
+  <div class="nav-brand">
+    <a href="index.html" class="nav-logo" id="suncom-logo">SUN<span>COM</span></a>
+    <span class="nav-tagline">Here comes the sun</span>
+  </div>
   <div class="nav-right">
     <button class="theme-toggle" id="themeToggle">
       <span class="toggle-icon" id="toggleIcon">◑</span>
