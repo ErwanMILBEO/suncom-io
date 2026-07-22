@@ -167,125 +167,154 @@
   .hero-scroll span { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); transition: color 0.4s; }
   .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, rgba(0,201,177,0.5), transparent); animation: scrollPulse 2s ease-in-out infinite; }
 
-  /* GRID */
+  /* ===== GRID + CARTES ÉCOSYSTÈME (toujours sombres) ===== */
   .grid-section { padding: 0 3rem 6rem; max-width: 1200px; margin: 0 auto; }
   .grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr; gap: 12px;
-    background: rgba(0,201,177,0.08); border: 2px solid rgba(0,201,177,0.08);
-    transition: background 0.4s, border-color 0.4s;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 22px;
+    align-items: stretch;
   }
 
+  /* Base commune — fond sombre fixe, accent par carte via --accent */
   .bloc {
-    background: var(--bg-bloc); padding: 3rem;
+    background: #12303A; padding: 2.8rem;
     display: flex; flex-direction: column;
     position: relative; overflow: hidden; cursor: pointer;
-    min-height: 300px;
-    transition: background 0.35s, opacity 0.6s, transform 0.6s;
-    opacity: 1; transform: translateY(0);
+    min-height: 340px; border-radius: 14px;
+    border: 1px solid rgba(var(--accent-rgb), 0.13);
+    transition: background 0.35s, border-color 0.4s, box-shadow 0.4s;
   }
-  .bloc.visible { opacity: 1; transform: translateY(0); }
-  .bloc:nth-child(1) { transition-delay: 0.05s; }
-  .bloc:nth-child(2) { transition-delay: 0.12s; }
-  .bloc:nth-child(3) { transition-delay: 0.19s; }
-  .bloc:nth-child(4) { transition-delay: 0.26s; }
-
-  .bloc::before {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(135deg, rgba(0,201,177,0.05) 0%, transparent 60%);
-    opacity: 0; transition: opacity 0.35s; pointer-events: none;
-  }
-  .bloc:hover::before { opacity: 1; }
   .bloc::after {
-    content: ''; position: absolute;
-    bottom: 0; left: 0; right: 0; height: 2px;
-    background: linear-gradient(90deg, #00C9B1, #00e5cc);
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+    background: rgba(var(--accent-rgb), 0.13);
     transform: scaleX(0); transform-origin: left;
-    transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);
+    transition: transform 0.45s cubic-bezier(0.4,0,0.2,1), background 0.35s;
   }
-  .bloc:hover::after { transform: scaleX(1); }
-  .bloc:hover { background: var(--bg-bloc-hover); }
+  .bloc:hover::after { transform: scaleX(1); background: var(--accent); }
+  .bloc:hover { background: #163a45; }
+  .bloc:hover .cta { color: var(--accent); border-color: var(--accent); }
 
   .bloc-num {
-    position: absolute; top: 2rem; right: 2.5rem;
+    position: absolute; top: 2rem; right: 2.4rem;
     font-family: 'Michroma', sans-serif; font-size: 72px;
-    color: var(--num-color); line-height: 1; pointer-events: none;
-    transition: color 0.35s;
+    line-height: 1; pointer-events: none; transition: color 0.35s;
+    color: rgba(var(--accent-rgb), 0.13);
   }
-  .bloc:hover .bloc-num { color: var(--num-hover); }
+  .bloc:hover .bloc-num { color: rgba(var(--accent-rgb), 0.22); }
 
-  .bloc-dot {
-    position: absolute; width: 6px; height: 6px; border-radius: 50%;
-    background: #00C9B1; top: 2.9rem; right: 2.6rem;
-    opacity: 0; transition: opacity 0.3s;
+  .bloc-watermark {
+    position: absolute; bottom: -2rem; right: -1.5rem;
+    width: 210px; height: 210px; opacity: 0.05;
+    pointer-events: none; transition: opacity 0.35s;
   }
-  .bloc:hover .bloc-dot { opacity: 1; }
+  .bloc:hover .bloc-watermark { opacity: 0.09; }
 
-  /* LAB */
-  .bloc-lab { background: var(--bg-lab); }
-  .bloc-lab::before {
-    background: radial-gradient(ellipse at 85% 15%, rgba(0,201,177,0.15) 0%, transparent 65%);
-    opacity: 1;
-  }
-  .bloc-lab:hover::before { opacity: 1; }
-  .bloc-lab:hover { background: var(--bg-lab-hover); }
-  .bloc-lab .bloc-num { color: rgba(255,255,255,0.03); }
-  .bloc-lab:hover .bloc-num { color: rgba(0,201,177,0.07); }
-  .bloc-lab .bloc-dot { opacity: 0.5; }
-  .bloc-lab:hover .bloc-dot { opacity: 1; }
-  .bloc-lab .bloc-tag { color: #00C9B1; border-color: rgba(0,201,177,0.25); }
-  .bloc-lab .bloc-title { color: #FAFAF8; }
-  .bloc-lab .bloc-title span { color: #F0A500; }
-  .bloc-lab .bloc-desc { color: rgba(255,255,255,0.5); }
-  .bloc-lab .bloc-link { color: #00C9B1; }
-  .bloc-lab .bloc-link::after { background: #00C9B1; }
-
-  .lab-nyc {
-    position: absolute; bottom: -1.5rem; right: -0.5rem;
-    font-family: 'Michroma', sans-serif; font-size: 110px;
-    color: var(--nyc-color); letter-spacing: -0.02em; line-height: 1;
-    pointer-events: none; transition: color 0.35s;
-  }
-  .bloc-lab:hover .lab-nyc { color: var(--nyc-hover); }
-
-  .lab-pill {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: rgba(0,201,177,0.1); border: 1px solid rgba(0,201,177,0.25);
-    border-radius: 20px; padding: 4px 12px; font-size: 11px;
-    letter-spacing: 0.06em; color: #00C9B1;
-    margin-bottom: 1rem; width: fit-content;
-  }
-  .lab-pill-dot { width: 5px; height: 5px; border-radius: 50%; background: #00C9B1; animation: pulse 2s ease-in-out infinite; }
+  .bloc-logo { margin-bottom: 1.4rem; }
 
   .bloc-tag {
     font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--tag-color); border: 1px solid var(--tag-border);
+    color: rgba(255,255,255,0.35); border: 1px solid rgba(255,255,255,0.1);
     display: inline-block; padding: 3px 10px; border-radius: 2px;
-    margin-bottom: 1.5rem; width: fit-content;
-    transition: color 0.4s, border-color 0.4s;
+    margin-bottom: 1.2rem; width: fit-content;
   }
   .bloc-title {
     font-family: 'Michroma', sans-serif; font-size: 22px;
-    letter-spacing: 0.05em; color: var(--text);
-    margin-bottom: 0.75rem; line-height: 1.2;
-    transition: color 0.4s;
+    letter-spacing: 0.04em; line-height: 1; margin-bottom: 0;
+    display: flex; align-items: baseline;
   }
-  .bloc-title span { color: #00C9B1; font-size: 14px; display: block; margin-top: 2px; }
-  .bloc-desc { font-size: 13.5px; font-weight: 300; color: var(--desc-color); line-height: 1.7; flex: 1; margin-bottom: 2rem; transition: color 0.4s; }
-  .bloc-link {
-    font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
-    color: var(--link-color); text-decoration: none;
-    display: inline-flex; align-items: center; gap: 8px; position: relative;
-    transition: color 0.4s;
+  .bloc-slogan { margin-bottom: 1.3rem; }
+  .slogan-min { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.30); }
+
+  .bloc-desc { font-size: 13.5px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.5; flex: 1; margin-bottom: 2rem; }
+  .bloc-accroche { display: block; margin-top: 0.95rem; color: #ffffff; font-weight: 500; }
+
+  /* Wordmarks (couleurs de marque, en dur) */
+  .wm-buy, .wm-em, .wm-s, .wm-suncom { color: #E8EDF5; }
+  .wm-est { color: #00D4B8; }
+  .wm-io  { color: #F0A500; font-size: 14px; margin-left: 2px; }
+  .wm-ia  { color: #00C4B4; font-size: 26px; }
+  .wm-ai  { color: #F0A500; font-size: 14px; margin-left: 2px; }
+  .wm-lab { color: #00C4B4; margin-left: 0.28em; }
+  .wm-llc { color: #F0A500; font-size: 14px; margin-left: 3px; letter-spacing: 0.06em; }
+
+  /* Bouton (modèle C, accent par carte) */
+  .cta {
+    align-self: flex-start;
+    display: inline-flex; align-items: center; gap: 9px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none; cursor: pointer; position: relative; z-index: 2;
+    background: #17414d; color: rgba(var(--accent-rgb), 0.72);
+    border: 1px solid rgba(var(--accent-rgb), 0.13);
+    padding: 13px 24px; border-radius: 9px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.4);
+    transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), box-shadow 0.25s, background 0.25s, border-color 0.25s, color 0.25s;
   }
-  .bloc-link::after {
-    content: ''; position: absolute; bottom: -2px; left: 0; right: 0;
-    height: 1px; background: var(--link-line);
-    transform: scaleX(0); transform-origin: left; transition: transform 0.3s, background 0.4s;
+  .cta:hover {
+    transform: translateY(-3px); background: #1b4b58;
+    box-shadow: 0 16px 34px rgba(0,0,0,0.5), 0 0 0 1px rgba(var(--accent-rgb), 0.35);
   }
-  .bloc:hover .bloc-link::after { transform: scaleX(1); }
-  .bloc-link svg { transition: transform 0.2s; }
-  .bloc:hover .bloc-link svg { transform: translateX(4px); }
+  .cta svg { transition: transform 0.25s; }
+  .cta:hover svg { transform: translateX(4px); }
+
+  /* Accents par carte */
+  .bloc-buyest { --accent: #F43F5E; --accent-rgb: 244,63,94; }
+  .bloc-emias  { --accent: #FF6B4D; --accent-rgb: 255,107,77; }
+  .bloc-lab    { --accent: #8B5CF6; --accent-rgb: 139,92,246; }
+
+  /* ===== Carte 04 — LE CLUB (navy & gold, premium) ===== */
+  .bloc-club {
+    --accent: #F0A500; --accent-rgb: 240,165,0;
+    border-radius: 16px; border: 1px solid rgba(240,165,0,0.22);
+    background:
+      radial-gradient(circle at 82% 14%, rgba(240,165,0,0.13), transparent 46%),
+      radial-gradient(circle at 14% 88%, rgba(240,165,0,0.05), transparent 52%),
+      linear-gradient(155deg, #0e2247 0%, #081428 62%, #0a1a32 100%);
+    box-shadow: 0 20px 52px rgba(0,0,0,0.42), inset 0 0 60px rgba(240,165,0,0.03);
+  }
+  .bloc-club::after { background: linear-gradient(90deg, #F0A500, #FFC24D); }
+  .bloc-club:hover {
+    background:
+      radial-gradient(circle at 82% 14%, rgba(240,165,0,0.15), transparent 46%),
+      radial-gradient(circle at 14% 88%, rgba(240,165,0,0.06), transparent 52%),
+      linear-gradient(155deg, #0e2247 0%, #081428 62%, #0a1a32 100%);
+    border-color: rgba(240,165,0,0.42);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5), inset 0 0 70px rgba(240,165,0,0.05);
+  }
+  .bloc-club .bloc-num {
+    font-family: 'Orbitron', sans-serif; font-weight: 500; font-size: 68px;
+    color: rgba(240,165,0,0.14); text-shadow: 0 0 26px rgba(240,165,0,0.12);
+  }
+  .bloc-club:hover .bloc-num { color: rgba(240,165,0,0.26); }
+  .bloc-club .bloc-watermark { opacity: 0.09; filter: drop-shadow(0 0 6px rgba(240,165,0,0.3)); }
+  .bloc-club:hover .bloc-watermark { opacity: 0.14; }
+  .bloc-club .bloc-logo { filter: drop-shadow(0 0 8px rgba(240,165,0,0.35)); }
+  .bloc-club .bloc-tag {
+    font-family: 'Michroma', sans-serif; letter-spacing: 0.24em;
+    color: #F0A500; border: 1px solid rgba(240,165,0,0.42);
+    background: rgba(240,165,0,0.05); padding: 5px 14px; border-radius: 3px;
+    box-shadow: 0 0 14px rgba(240,165,0,0.10);
+  }
+  .bloc-club .bloc-title {
+    display: block; font-family: 'Orbitron', sans-serif; font-weight: 600;
+    font-size: 23px; letter-spacing: 0.06em; line-height: 1.05;
+    background: linear-gradient(100deg, #ffffff 0%, #FFD37A 48%, #F0A500 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+    filter: drop-shadow(0 0 12px rgba(240,165,0,0.28)); width: fit-content;
+  }
+  .bloc-club .slogan-min { color: rgba(240,165,0,0.55); letter-spacing: 0.18em; }
+  .bloc-club .cta {
+    background: rgba(240,165,0,0.04); color: #F0A500;
+    border: 1px solid rgba(240,165,0,0.5);
+    padding: 13px 28px; border-radius: 999px; box-shadow: none;
+    font-weight: 700; letter-spacing: 0.08em;
+  }
+  .bloc-club:hover .cta { color: #F0A500; border-color: rgba(240,165,0,0.5); }
+  .bloc-club .cta:hover {
+    transform: translateY(-3px);
+    background: rgba(240,165,0,0.10); border-color: #F0A500;
+    box-shadow: 0 0 22px rgba(240,165,0,0.16);
+  }
 
   /* FOOTER */
   footer {
@@ -344,70 +373,131 @@
 <div class="grid-section" id="blocs">
   <div class="grid">
 
-    <div class="bloc">
+    <!-- 01 · BUYEST -->
+    <div class="bloc bloc-buyest">
       <div class="bloc-num">01</div>
-      <div class="bloc-dot"></div>
-      <span class="bloc-tag" data-i18n="b1_tag">Agents &amp; Actionnaires</span>
-      <div class="bloc-title">SUNCOM<span>Estate</span></div>
-      <p class="bloc-desc" data-i18n-html="b1_desc">Mandataire indépendant dans l'immobilier, tu deviens associé &amp; actionnaire&nbsp;! Tu perçois tes commissions, partages les bénéfices&nbsp;; tu as un capital réel et un patrimoine transmissible à tout moment.<br><span style="color:#ffffff;">Construis-toi un avenir&nbsp;!</span></p>
-      <a href="suncom_landing_estate.html" class="bloc-link">
-        <span data-i18n="b1_link">Devenir agent fondateur</span>
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-      </a>
-    </div>
-
-    <div class="bloc">
-      <div class="bloc-num">02</div>
-      <div class="bloc-dot"></div>
-      <span class="bloc-tag" data-i18n="b2_tag">100% Services Immobiliers</span>
-      <div class="bloc-title">SUNCOM<span>Facilities</span></div>
-      <p class="bloc-desc" data-i18n-html="b2_desc">Tes clients ont besoin d'un financement, d'un diagnostic, d'une piscine, d'une extension, d'un paysagiste&nbsp;? Rejoins nos 52K agents et obtiens ton «&nbsp;<span style="font-size:0.85em;">PASS FACILITIES</span>&nbsp;» pour tes missions avec nos 30K entreprises.<br><span style="color:#ffffff;">Plus de commissions, plus de bénéfices&nbsp;!</span></p>
-      <a href="#" class="bloc-link">
-        <span data-i18n="b2_link">En savoir plus</span>
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-      </a>
-    </div>
-
-    <div class="bloc">
-      <div class="bloc-num">03</div>
-      <div class="bloc-dot"></div>
-      <span class="bloc-tag" data-i18n="b3_tag">Le Club</span>
-      <div class="bloc-title">SUNCOM<span>Associates</span></div>
-      <p class="bloc-desc" data-i18n-html="b3_desc">Échange et partage avec tes confrères et associés au sein de notre club privé. Découvre les derniers outils et les tactiques gagnantes. Consulte tous tes business sur une seule App.<br><span style="color:#ffffff;">Une communauté internationale&nbsp;!</span></p>
-      <a href="suncom_landing_estate.html" class="bloc-link">
-        <span data-i18n="b3_link">Rejoindre le réseau</span>
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-      </a>
-    </div>
-
-    <div class="bloc bloc-lab">
-      <div class="bloc-num">04</div>
-      <div class="bloc-dot"></div>
-      <div class="lab-nyc">NYC</div>
-      <div style="display:flex;align-items:center;gap:10px;flex-wrap:nowrap;white-space:nowrap;margin-bottom:1.5rem;">
-        <span class="bloc-tag" style="white-space:nowrap;display:inline-block;margin-bottom:0;">Think Tank &amp; Tech</span>
-        <span style="color:rgba(255,255,255,0.2);font-size:14px;">|</span>
-        <span style="font-size:11px;letter-spacing:0.06em;color:#F0A500;white-space:nowrap;"><span style="font-size:16px;">⌱</span> New York 🗽</span>
-      </div>
-      <div class="bloc-title">SUNCOM<span>Lab</span></div>
-      <svg viewBox="0 0 200 200" width="60" height="60" xmlns="http://www.w3.org/2000/svg" style="position:absolute;bottom:2.5rem;right:3rem;opacity:0.7;width:50px;height:50px;">
-          <defs><linearGradient id="hexG" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00C9B1"/><stop offset="50%" stop-color="#0099CC"/><stop offset="100%" stop-color="#0066BB"/></linearGradient></defs>
-          <polygon points="100,10 178,55 178,145 100,190 22,145 22,55" fill="none" stroke="url(#hexG)" stroke-width="2"/>
-          <polygon points="100,22 168,60 168,140 100,178 32,140 32,60" fill="#0D1B2A"/>
-          <ellipse cx="100" cy="100" rx="32" ry="32" fill="none" stroke="#1D6B5E" stroke-width="1.2"/>
-          <ellipse cx="100" cy="100" rx="14" ry="32" fill="none" stroke="#1D6B5E" stroke-width="1"/>
-          <line x1="68" y1="100" x2="132" y2="100" stroke="#1D6B5E" stroke-width="1"/>
-          <line x1="72" y1="84" x2="128" y2="84" stroke="#1D6B5E" stroke-width="0.8"/>
-          <line x1="72" y1="116" x2="128" y2="116" stroke="#1D6B5E" stroke-width="0.8"/>
-          <ellipse cx="100" cy="100" rx="56" ry="18" fill="none" stroke="#00C9B1" stroke-width="1.8" transform="rotate(-25 100 100)"/>
-          <circle cx="100" cy="100" r="4.5" fill="#00C9B1"/>
-          <circle cx="100" cy="100" r="2" fill="#ffffff"/>
-          <circle cx="148" cy="92" r="5.5" fill="#F0A500"/>
+      <svg class="bloc-watermark" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polyline points="10,48 45,10 80,48" stroke="#00D4B8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="18" y="48" width="54" height="34" rx="1" stroke="#00D4B8" stroke-width="4" fill="none"/>
+        <rect x="35" y="62" width="20" height="20" rx="1" fill="#00D4B8" opacity="0.25" stroke="#00D4B8" stroke-width="3"/>
+        <circle cx="58" cy="38" r="5" fill="#F0A500"/>
+      </svg>
+      <div class="bloc-logo">
+        <svg width="42" height="42" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="10,48 45,10 80,48" stroke="#00D4B8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="18" y="48" width="54" height="34" rx="1" stroke="#00D4B8" stroke-width="4" fill="none"/>
+          <rect x="35" y="62" width="20" height="20" rx="1" fill="#00D4B8" opacity="0.25" stroke="#00D4B8" stroke-width="3"/>
+          <circle cx="58" cy="38" r="5" fill="#F0A500"/>
         </svg>
-      <p class="bloc-desc" data-i18n-html="b4_desc">Participe à la recherche et développement en rejoignant notre Think Tank international à New York. Ici, c'est la tech, l'I.A., les SaaS, la vidéo, la communication, le social network, la veille, les benchmarks… OPEN !<br><span style="color:#ffffff;">Associé avant le 31.08.26 <span style="color:#F0A500; font-size:16px; text-shadow:none;">⌱</span> 1 A/R New York offert depuis ta capitale !</span></p>
-      <a href="#" class="bloc-link">
-        <span data-i18n="b4_link">Découvrir le Lab</span>
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </div>
+      <span class="bloc-tag" data-i18n="b1_tag">L'Immobilier Mondial par I.A.</span>
+      <div class="bloc-title" translate="no"><span class="wm-buy">BUY</span><span class="wm-est">EST</span><span class="wm-io">.io</span></div>
+      <div class="bloc-slogan"><span class="slogan-min" translate="no">In your corner</span></div>
+      <p class="bloc-desc"><span data-i18n="b1_desc">Buyest est une architecture technologique innovante et une intelligence artificielle, pensée, conçue et déployée pour configurer et exécuter des projets immobiliers, en tout point du globe.</span><span class="bloc-accroche" data-i18n="b1_acc">Orchestration et trajectoire optimisée</span></p>
+      <a href="https://buyest.io" class="cta">
+        <span data-i18n="b1_link">Découvrir Buyest</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </a>
+    </div>
+
+    <!-- 02 · EMIAS -->
+    <div class="bloc bloc-emias">
+      <div class="bloc-num">02</div>
+      <svg class="bloc-watermark" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="20" y1="30" x2="48" y2="20" stroke="#00C4B4" stroke-width="2"/>
+        <line x1="20" y1="30" x2="44" y2="55" stroke="#00C4B4" stroke-width="2"/>
+        <line x1="48" y1="20" x2="70" y2="45" stroke="#00C4B4" stroke-width="2"/>
+        <line x1="44" y1="55" x2="70" y2="45" stroke="#00C4B4" stroke-width="2"/>
+        <line x1="44" y1="55" x2="56" y2="75" stroke="#00C4B4" stroke-width="2"/>
+        <circle cx="20" cy="30" r="5" fill="none" stroke="#00C4B4" stroke-width="2.5"/>
+        <circle cx="48" cy="20" r="5" fill="none" stroke="#00C4B4" stroke-width="2.5"/>
+        <circle cx="70" cy="45" r="5.5" fill="#F0A500"/>
+        <circle cx="44" cy="55" r="5" fill="none" stroke="#00C4B4" stroke-width="2.5"/>
+        <circle cx="56" cy="75" r="4" fill="none" stroke="#00C4B4" stroke-width="2.5"/>
+      </svg>
+      <div class="bloc-logo">
+        <svg width="42" height="42" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="20" y1="30" x2="48" y2="20" stroke="#00C4B4" stroke-width="4" stroke-linecap="round"/>
+          <line x1="20" y1="30" x2="44" y2="55" stroke="#00C4B4" stroke-width="4" stroke-linecap="round"/>
+          <line x1="48" y1="20" x2="70" y2="45" stroke="#00C4B4" stroke-width="4" stroke-linecap="round"/>
+          <line x1="44" y1="55" x2="70" y2="45" stroke="#00C4B4" stroke-width="4" stroke-linecap="round"/>
+          <line x1="44" y1="55" x2="56" y2="75" stroke="#00C4B4" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="20" cy="30" r="6" fill="none" stroke="#00C4B4" stroke-width="4"/>
+          <circle cx="48" cy="20" r="6" fill="none" stroke="#00C4B4" stroke-width="4"/>
+          <circle cx="70" cy="45" r="6.5" fill="#F0A500"/>
+          <circle cx="44" cy="55" r="6" fill="none" stroke="#00C4B4" stroke-width="4"/>
+          <circle cx="56" cy="75" r="5" fill="none" stroke="#00C4B4" stroke-width="4"/>
+        </svg>
+      </div>
+      <span class="bloc-tag" data-i18n="b2_tag">Intelligence Artificielle Appliquée</span>
+      <div class="bloc-title" translate="no"><span class="wm-em">EM</span><span class="wm-ia">IA</span><span class="wm-s">S</span><span class="wm-ai">.ai</span></div>
+      <div class="bloc-slogan"><span class="slogan-min" translate="no">At your command</span></div>
+      <p class="bloc-desc"><span data-i18n="b2_desc">Une I.A. dédiée à vos ambitions et à vos projets immobiliers. Applicatifs et web services. EMIAS déploie et maintient des solutions intelligentes rien que pour vous&nbsp;!</span><span class="bloc-accroche" data-i18n="b2_acc">Taillée pour vos besoins de A à Z</span></p>
+      <a href="https://buyest.io/emias/" class="cta">
+        <span data-i18n="b2_link">Découvrir EMIAS</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </a>
+    </div>
+
+    <!-- 03 · SUNCOM Lab -->
+    <div class="bloc bloc-lab">
+      <div class="bloc-num">03</div>
+      <svg class="bloc-watermark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="100,12 178,56 178,144 100,188 22,144 22,56" fill="none" stroke="#00C4B4" stroke-width="4" stroke-linejoin="round"/>
+        <ellipse cx="100" cy="100" rx="54" ry="19" fill="none" stroke="#00C4B4" stroke-width="3" transform="rotate(-25 100 100)"/>
+        <ellipse cx="100" cy="100" rx="19" ry="54" fill="none" stroke="rgba(0,196,180,0.5)" stroke-width="2.5" transform="rotate(-25 100 100)"/>
+        <circle cx="100" cy="100" r="9" fill="#00C4B4"/>
+        <circle cx="150" cy="86" r="8" fill="#F0A500"/>
+      </svg>
+      <div class="bloc-logo">
+        <svg width="44" height="44" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="100,12 178,56 178,144 100,188 22,144 22,56" fill="none" stroke="#00C4B4" stroke-width="6" stroke-linejoin="round"/>
+          <ellipse cx="100" cy="100" rx="54" ry="19" fill="none" stroke="#00C4B4" stroke-width="4" transform="rotate(-25 100 100)"/>
+          <ellipse cx="100" cy="100" rx="19" ry="54" fill="none" stroke="rgba(0,196,180,0.4)" stroke-width="3" transform="rotate(-25 100 100)"/>
+          <circle cx="100" cy="100" r="9" fill="#00C4B4"/>
+          <circle cx="150" cy="86" r="8" fill="#F0A500"/>
+        </svg>
+      </div>
+      <span class="bloc-tag" data-i18n="b3_tag">Think Tank · R&amp;D Stratégique</span>
+      <div class="bloc-title" translate="no"><span class="wm-suncom">SUNCOM</span><span class="wm-lab">Lab</span><span class="wm-llc">.llc</span></div>
+      <div class="bloc-slogan"><span class="slogan-min" translate="no">Thinks Models Experiments Decides</span></div>
+      <p class="bloc-desc"><span data-i18n="b3_desc">Centre de recherche et développement stratégique du groupe SUNCOM. Il pilote la conception, l'architecture et l'implantation des filiales mondiales. Structure de réflexion de haut niveau réunissant des experts internationaux.</span><span class="bloc-accroche" data-i18n="b3_acc">Une vision doit exister avant de se structurer</span></p>
+      <a href="https://www.suncom-lab.llc" class="cta" target="_blank" rel="noopener">
+        <span data-i18n="b3_link">Découvrir le Lab</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </a>
+    </div>
+
+    <!-- 04 · LE CLUB -->
+    <div class="bloc bloc-club">
+      <div class="bloc-num">04</div>
+      <svg class="bloc-watermark" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M31 52 L31 34 Q31 26 39 26 L51 26 Q59 26 59 34 L59 52" fill="none" stroke="#F0A500" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M31 44 Q23 44 23 52 L23 64" fill="none" stroke="#F0A500" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M59 44 Q67 44 67 52 L67 64" fill="none" stroke="#F0A500" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="24" y1="56" x2="66" y2="56" stroke="#F0A500" stroke-width="4" stroke-linecap="round"/>
+        <line x1="28" y1="64" x2="28" y2="72" stroke="#F0A500" stroke-width="4" stroke-linecap="round"/>
+        <line x1="62" y1="64" x2="62" y2="72" stroke="#F0A500" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="45" cy="40" r="4" fill="#FFC24D"/>
+      </svg>
+      <div class="bloc-logo">
+        <svg width="42" height="42" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M31 52 L31 34 Q31 26 39 26 L51 26 Q59 26 59 34 L59 52" fill="none" stroke="#F0A500" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M31 44 Q23 44 23 52 L23 64" fill="none" stroke="#F0A500" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M59 44 Q67 44 67 52 L67 64" fill="none" stroke="#F0A500" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="24" y1="56" x2="66" y2="56" stroke="#F0A500" stroke-width="4" stroke-linecap="round"/>
+          <line x1="28" y1="64" x2="28" y2="72" stroke="#F0A500" stroke-width="4" stroke-linecap="round"/>
+          <line x1="62" y1="64" x2="62" y2="72" stroke="#F0A500" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="45" cy="40" r="4" fill="#FFC24D"/>
+        </svg>
+      </div>
+      <span class="bloc-tag" data-i18n="b4_tag">Le Club</span>
+      <div class="bloc-title" data-i18n="b4_title">ESPACE MEMBRES</div>
+      <div class="bloc-slogan"><span class="slogan-min" translate="no">You belong here</span></div>
+      <p class="bloc-desc"><span data-i18n="b4_desc">Le premier club transfrontalier de mandataires réunis dans une appli intelligente. Accès à tous les avantages et services tech. Participation au laboratoire et à la R&amp;D des projets. Tous ensemble, nous allons plus loin et partageons les résultats financiers&nbsp;!</span><span class="bloc-accroche" data-i18n="b4_acc">C'est nous les patrons&nbsp;!</span></p>
+      <a href="#" class="cta">
+        <span data-i18n="b4_link">Nous rejoindre</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
       </a>
     </div>
 
@@ -460,6 +550,6 @@
   }
 })();
 </script>
-<script src="lang.js?v=5"></script>
+<script src="lang.js?v=8"></script>
 
 </body></html>
