@@ -316,15 +316,39 @@
     box-shadow: 0 0 22px rgba(240,165,0,0.16);
   }
 
-  /* FOOTER */
+  /* FOOTER — widget EMIAS repris à l'identique de buyest.io */
   footer {
-    border-top: 1px solid var(--border); padding: 2rem 3rem;
-    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid var(--border); padding: 2.2rem 3rem;
+    display: flex; justify-content: center; align-items: center;
     max-width: 1200px; margin: 0 auto; transition: border-color 0.4s;
   }
-  .footer-logo { font-family: 'Michroma', sans-serif; font-size: 13px; letter-spacing: 0.1em; color: var(--text); transition: color 0.4s; }
-  .footer-logo span { color: #00C9B1; }
-  .footer-meta { font-size: 11px; color: var(--footer-meta); letter-spacing: 0.04em; transition: color 0.4s; }
+  .footer-eco { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px; }
+  .footer-addr, .footer-legal {
+    font-family: 'Michroma', sans-serif; font-size: 9px; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--footer-meta); margin: 0; line-height: 1.5;
+    transition: color 0.4s;
+  }
+  .footer-legal-row { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; }
+  .footer-emias {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 2px 8px; margin-left: 8px;
+    background: linear-gradient(135deg, rgba(0,212,184,0.10) 0%, rgba(240,165,0,0.07) 100%);
+    border: 1px solid rgba(0,212,184,0.38); border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0,212,184,0.10);
+    text-decoration: none; white-space: nowrap; vertical-align: middle;
+    transition: all 0.28s ease;
+  }
+  .footer-emias:hover { border-color: rgba(0,212,184,0.7); box-shadow: 0 0 12px rgba(0,212,184,0.22); }
+  .footer-emias .emias-dot {
+    width: 4px; height: 4px; border-radius: 50%; flex-shrink: 0;
+    background: linear-gradient(135deg,#00D4B8,#F0A500);
+    box-shadow: 0 0 3px rgba(0,212,184,0.6);
+  }
+  .footer-emias .emias-wm { font-family: 'Michroma', sans-serif; font-size: 8px; letter-spacing: 0.07em; line-height: 1; }
+  .footer-emias .e-em, .footer-emias .e-s { color: #E8EDF5; }
+  body:not(.dark) .footer-emias .e-em, body:not(.dark) .footer-emias .e-s { color: var(--text); }
+  .footer-emias .e-ia { color: #00D4B8; }
+  .footer-emias .e-ai { color: #F0A500; }
 
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes scrollPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
@@ -505,8 +529,16 @@
 </div>
 
 <footer>
-  <div class="footer-logo">SUN<span>COM</span></div>
-  <div class="footer-meta"><a href="about.html" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:1px;transition:border-color 0.2s;" onmouseover="this.style.borderColor='#00C9B1'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)'">e2w Holding</a> — © 2026 — <span data-i18n="footer_rights">Tous droits réservés</span> — <a href="https://www.suncom-lab.llc" style="color:inherit;text-decoration:none;opacity:0.45;font-size:10px;" target="_blank">www.suncom-lab.llc</a> <span style="opacity:0.35;font-size:10px;">Copyright 2026 Erwan Milbéo Web Service</span></div>
+  <div class="footer-eco">
+    <p class="footer-addr">SUNCOM Group real estate A.I. · 276 5th Ave #704 · New York, NY 10001 · USA</p>
+    <div class="footer-legal-row">
+      <p class="footer-legal">© 2026 EM Intelligent Assistant System · <span data-i18n="footer_rights">Tous droits réservés</span></p>
+      <a href="https://buyest.io/emias/" class="footer-emias" target="_blank" rel="noopener">
+        <span class="emias-dot"></span>
+        <span class="emias-wm"><span class="e-em">EM</span><span class="e-ia">IA</span><span class="e-s">S</span><span class="e-ai">.ai</span></span>
+      </a>
+    </div>
+  </div>
 </footer>
 
 <script>
