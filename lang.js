@@ -606,6 +606,19 @@ const LANG_META = {
   ru: { flag: '🇷🇺', label: 'Русский' },
 };
 
+// Meta description SEO, une par langue (indexation internationale).
+// Le fallback figé dans index.html <head> est l'anglais (robots sans JS).
+const SUNCOM_META_DESC = {
+  fr: "SUNCOM - Here Comes The Sun - Groupe immobilier mondial propulsé par l'I.A. : Buyest, Emias, Suncom Lab... Particuliers et Professionnels",
+  en: "SUNCOM - Here Comes The Sun - Global real estate group powered by A.I.: Buyest, Emias, Suncom Lab... For individuals and professionals",
+  de: "SUNCOM - Here Comes The Sun - Weltweite Immobiliengruppe mit KI: Buyest, Emias, Suncom Lab... Für Privatpersonen und Profis",
+  es: "SUNCOM - Here Comes The Sun - Grupo inmobiliario mundial impulsado por la I.A.: Buyest, Emias, Suncom Lab... Particulares y profesionales",
+  pt: "SUNCOM - Here Comes The Sun - Grupo imobiliário mundial impulsionado pela I.A.: Buyest, Emias, Suncom Lab... Particulares e profissionais",
+  ru: "SUNCOM - Here Comes The Sun - Международная группа недвижимости на базе ИИ: Buyest, Emias, Suncom Lab... Для частных лиц и профессионалов",
+};
+
+const OG_LOCALES = { fr: 'fr_FR', en: 'en_US', de: 'de_DE', es: 'es_ES', pt: 'pt_PT', ru: 'ru_RU' };
+
 function applyLang(lang) {
   const t = SUNCOM_LANGS[lang] || SUNCOM_LANGS['fr'];
   document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -626,6 +639,13 @@ function applyLang(lang) {
   if (btn) btn.textContent = LANG_META[lang].flag + ' ' + lang.toUpperCase() + ' ▾';
   localStorage.setItem('suncom_lang', lang);
   document.documentElement.lang = lang;
+
+  // Meta description + partage social, traduits selon la langue active
+  const desc = SUNCOM_META_DESC[lang] || SUNCOM_META_DESC['en'];
+  document.querySelectorAll('meta[name="description"], meta[property="og:description"], meta[name="twitter:description"]')
+    .forEach(m => m.setAttribute('content', desc));
+  const ogLocale = document.querySelector('meta[property="og:locale"]');
+  if (ogLocale) ogLocale.setAttribute('content', OG_LOCALES[lang] || 'en_US');
 }
 
 function initLangSelector() {
