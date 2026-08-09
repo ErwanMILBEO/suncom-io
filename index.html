@@ -531,7 +531,7 @@
       <div class="bloc-title" data-i18n="b4_title">ESPACE MEMBRES</div>
       <div class="bloc-slogan"><span class="slogan-min" translate="no">You belong here</span></div>
       <p class="bloc-desc"><span data-i18n="b4_desc">Le premier club transfrontalier de mandataires immobiliers réunis dans une appli intelligente. Accès à tous les avantages et services tech. Participation au laboratoire et à la R&amp;D des projets. Tous ensemble, nous allons plus loin et partageons les résultats financiers&nbsp;!</span><span class="bloc-accroche" data-i18n="b4_acc">C'est vous le patron&nbsp;!</span></p>
-      <a href="#" class="cta">
+      <a href="#" class="cta" id="club-join-btn" role="button" aria-haspopup="dialog">
         <span data-i18n="b4_link">Nous rejoindre</span>
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
       </a>
@@ -552,6 +552,176 @@
     </div>
   </div>
 </footer>
+
+<!-- ===== Modale LE CLUB — formulaire de candidature ===== -->
+<style>
+  .cm-overlay{position:fixed;inset:0;z-index:1000;display:flex;align-items:flex-start;justify-content:center;padding:5vh 16px;background:rgba(4,10,20,0.74);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);overflow-y:auto;}
+  .cm-overlay[hidden]{display:none;}
+  .cm-box{position:relative;width:100%;max-width:620px;border-radius:16px;border:1px solid rgba(240,165,0,0.30);
+    background:radial-gradient(circle at 84% 4%, rgba(240,165,0,0.13), transparent 44%),linear-gradient(155deg,#0e2247 0%,#081428 62%,#0a1a32 100%);
+    box-shadow:0 30px 80px rgba(0,0,0,0.62), inset 0 0 70px rgba(240,165,0,0.04);
+    padding:34px 32px 30px;color:#e8eef6;font-family:'DM Sans',sans-serif;}
+  .cm-box::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;border-radius:16px 16px 0 0;background:linear-gradient(90deg,#F0A500,#FFC24D);}
+  .cm-close{position:absolute;top:13px;right:15px;background:none;border:none;color:rgba(240,165,0,0.75);font-size:20px;line-height:1;cursor:pointer;padding:6px;border-radius:6px;transition:.2s;}
+  .cm-close:hover{color:#F0A500;background:rgba(240,165,0,0.08);}
+  .cm-tag{display:inline-block;font-family:'Michroma',sans-serif;font-size:10px;letter-spacing:.24em;color:#F0A500;border:1px solid rgba(240,165,0,0.42);background:rgba(240,165,0,0.05);padding:5px 12px;border-radius:3px;}
+  .cm-title{margin:14px 0 7px;font-family:'Michroma',sans-serif;font-size:20px;line-height:1.28;
+    background:linear-gradient(100deg,#ffffff 0%,#FFD37A 48%,#F0A500 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;width:fit-content;}
+  .cm-sub{font-size:13.5px;line-height:1.55;color:rgba(232,238,246,0.72);margin-bottom:20px;}
+  .cm-form{display:flex;flex-direction:column;gap:13px;}
+  .cm-row{display:flex;gap:13px;}
+  .cm-row>*{flex:1;min-width:0;}
+  .cm-field{display:flex;flex-direction:column;gap:5px;}
+  .cm-label{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:rgba(240,165,0,0.74);}
+  .cm-field input,.cm-field select{width:100%;padding:11px 13px;border-radius:8px;border:1px solid rgba(240,165,0,0.22);background:rgba(255,255,255,0.03);color:#eef3f9;font-family:'DM Sans',sans-serif;font-size:14px;transition:.2s;}
+  .cm-field input::placeholder{color:rgba(232,238,246,0.34);}
+  .cm-field input:focus,.cm-field select:focus{outline:none;border-color:#F0A500;box-shadow:0 0 0 3px rgba(240,165,0,0.14);background:rgba(255,255,255,0.05);}
+  .cm-field select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,rgba(240,165,0,0.7) 50%),linear-gradient(135deg,rgba(240,165,0,0.7) 50%,transparent 50%);background-position:calc(100% - 18px) 19px,calc(100% - 13px) 19px;background-size:5px 5px,5px 5px;background-repeat:no-repeat;}
+  .cm-field select option{background:#0a1a32;color:#eef3f9;}
+  .cm-consent{display:flex;gap:11px;align-items:flex-start;margin-top:6px;padding:14px 15px;border-radius:10px;border:1px solid rgba(240,165,0,0.18);background:rgba(240,165,0,0.03);}
+  .cm-consent input{appearance:none;-webkit-appearance:none;margin-top:2px;width:20px;height:20px;flex:0 0 auto;border-radius:50%;border:1px solid rgba(240,165,0,0.5);background:rgba(0,0,0,0.32);cursor:pointer;position:relative;transition:.2s;}
+  .cm-consent input:hover{border-color:#F0A500;}
+  .cm-consent input:checked{background:#F0A500;border-color:#F0A500;}
+  .cm-consent input:checked::after{content:"";position:absolute;left:6.5px;top:3px;width:4px;height:8px;border:solid #0a1a32;border-width:0 2px 2px 0;transform:rotate(45deg);}
+  .cm-consent input:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(240,165,0,0.25);}
+  .cm-consent-text{font-size:12px;line-height:1.5;color:rgba(232,238,246,0.82);}
+  .cm-consent-text strong{color:#F5D98A;font-weight:600;}
+  .cm-consent-text ul{margin:7px 0 0;padding-left:16px;}
+  .cm-consent-text li{margin:4px 0;}
+  .cm-submit{margin-top:9px;padding:14px;border-radius:999px;border:1px solid #F0A500;cursor:pointer;
+    background:linear-gradient(100deg,#FFD37A,#F0A500 60%,#C7861F);color:#0a1a32;font-family:'DM Sans',sans-serif;font-weight:700;letter-spacing:.06em;font-size:14px;
+    box-shadow:0 10px 26px rgba(240,165,0,0.22);transition:.2s;}
+  .cm-submit:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(240,165,0,0.30);}
+  .cm-note{font-size:11px;line-height:1.5;color:rgba(232,238,246,0.5);text-align:center;margin-top:2px;}
+  .cm-other[hidden]{display:none;}
+  @media(max-width:560px){
+    .cm-overlay{padding:0;align-items:stretch;}
+    .cm-box{max-width:none;border-radius:0;min-height:100%;padding:26px 18px 26px;}
+    .cm-row{flex-direction:column;gap:13px;}
+  }
+</style>
+
+<div id="club-modal" class="cm-overlay" role="dialog" aria-modal="true" aria-labelledby="cm-title" hidden>
+  <div class="cm-box">
+    <button type="button" class="cm-close" data-cm-close aria-label="Fermer">&#10005;</button>
+    <span class="cm-tag" data-i18n="cm_tag">Le Club</span>
+    <h2 id="cm-title" class="cm-title" data-i18n="cm_title">Rejoindre l'Espace Membres</h2>
+    <p class="cm-sub" data-i18n="cm_sub">Rejoignez le premier club transfrontalier de professionnels de l'immobilier. Merci de renseigner vos informations&nbsp;:</p>
+
+    <form id="cm-form" class="cm-form" novalidate>
+      <div class="cm-row">
+        <div class="cm-field"><label class="cm-label" for="cm-prenom" data-i18n="cm_l_prenom">Prénom *</label><input id="cm-prenom" name="prenom" type="text" autocomplete="given-name" required></div>
+        <div class="cm-field"><label class="cm-label" for="cm-nom" data-i18n="cm_l_nom">Nom *</label><input id="cm-nom" name="nom" type="text" autocomplete="family-name" required></div>
+      </div>
+      <div class="cm-row">
+        <div class="cm-field"><label class="cm-label" for="cm-email" data-i18n="cm_l_email">E-mail *</label><input id="cm-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="cm-field"><label class="cm-label" for="cm-tel" data-i18n="cm_l_tel">Téléphone *</label><input id="cm-tel" name="tel" type="tel" autocomplete="tel" required></div>
+      </div>
+      <div class="cm-field"><label class="cm-label" for="cm-societe" data-i18n="cm_l_societe">Société / Enseigne</label><input id="cm-societe" name="societe" type="text" autocomplete="organization"></div>
+      <div class="cm-field">
+        <label class="cm-label" for="cm-statut" data-i18n="cm_l_statut">Statut / Rôle *</label>
+        <select id="cm-statut" name="statut" required>
+          <option value="" disabled selected data-i18n="cm_opt_ph">Sélectionnez votre statut…</option>
+          <option value="mandataire" data-i18n="cm_opt_1">Mandataire immobilier indépendant</option>
+          <option value="agent-co" data-i18n="cm_opt_2">Agent commercial en immobilier</option>
+          <option value="negociateur" data-i18n="cm_opt_3">Négociateur immobilier</option>
+          <option value="agent-t" data-i18n="cm_opt_4">Agent immobilier (titulaire carte T)</option>
+          <option value="directeur" data-i18n="cm_opt_5">Directeur / Responsable d'agence</option>
+          <option value="chasseur" data-i18n="cm_opt_6">Chasseur immobilier / Chasseur d'appartements</option>
+          <option value="autre-secteur" data-i18n="cm_opt_7">Professionnel d'un autre secteur</option>
+          <option value="particulier" data-i18n="cm_opt_8">Particulier intéressé par l'activité</option>
+          <option value="autre" data-i18n="cm_opt_9">Autre…</option>
+        </select>
+      </div>
+      <div class="cm-field cm-other" id="cm-statut-other" hidden>
+        <label class="cm-label" for="cm-statut-autre" data-i18n="cm_l_autre">Précisez</label>
+        <input id="cm-statut-autre" name="statut_autre" type="text">
+      </div>
+      <div class="cm-field"><label class="cm-label" for="cm-adresse" data-i18n="cm_l_adresse">Adresse *</label><input id="cm-adresse" name="adresse" type="text" autocomplete="street-address" required></div>
+      <div class="cm-row">
+        <div class="cm-field"><label class="cm-label" for="cm-cp" data-i18n="cm_l_cp">Code postal *</label><input id="cm-cp" name="cp" type="text" autocomplete="postal-code" required></div>
+        <div class="cm-field"><label class="cm-label" for="cm-ville" data-i18n="cm_l_ville">Ville *</label><input id="cm-ville" name="ville" type="text" autocomplete="address-level2" required></div>
+      </div>
+      <div class="cm-field"><label class="cm-label" for="cm-pays" data-i18n="cm_l_pays">Pays *</label><input id="cm-pays" name="pays" type="text" autocomplete="country-name" required></div>
+
+      <label class="cm-consent">
+        <input type="checkbox" name="consent" required>
+        <span class="cm-consent-text" data-i18n-html="cm_consent"><strong>En cochant cette case, je déclare&nbsp;:</strong>
+          <ul>
+            <li>souhaiter m'associer au projet SUNCOM et prendre part à ses développements&nbsp;;</li>
+            <li>être motivé pour vivre une expérience entrepreneuriale d'envergure mondiale dans le domaine de l'immobilier, de l'intelligence artificielle et de la deep tech&nbsp;;</li>
+            <li>rejoindre une communauté internationale de professionnels connectés, échanger sur les marchés immobiliers du monde entier, et identifier les opportunités et les orientations favorables à mon développement personnel et professionnel — là où je me trouve comme là où je choisirais de m'établir pour changer de vie&nbsp;;</li>
+            <li>souhaiter recevoir la documentation de présentation du projet et du Club&nbsp;;</li>
+            <li>reconnaître que je serai amené à recevoir des informations confidentielles, dont la communication pourra être subordonnée à la signature préalable d'un accord de confidentialité (NDA)&nbsp;;</li>
+            <li>accepter de communiquer l'ensemble de mes coordonnées et mon statut professionnel, et d'être recontacté par un membre de l'équipe SUNCOM&nbsp;;</li>
+            <li>consentir au traitement de mes données aux seules fins de prise de contact et de suivi de ma candidature.</li>
+          </ul></span>
+      </label>
+
+      <button type="submit" class="cm-submit" data-i18n="cm_submit">Envoyer ma candidature</button>
+      <p class="cm-note" data-i18n-html="cm_note">En validant, votre messagerie s'ouvrira avec votre candidature pré-remplie,<br>prête à être envoyée à l'équipe SUNCOM.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  var openBtn=document.getElementById('club-join-btn');
+  var modal=document.getElementById('club-modal');
+  if(!openBtn||!modal) return;
+  var closeEls=modal.querySelectorAll('[data-cm-close]');
+  var statut=document.getElementById('cm-statut');
+  var otherWrap=document.getElementById('cm-statut-other');
+  var otherInput=document.getElementById('cm-statut-autre');
+  var form=document.getElementById('cm-form');
+  var lastFocus=null;
+
+  function openModal(e){ if(e){e.preventDefault();} lastFocus=document.activeElement; modal.hidden=false; document.body.style.overflow='hidden'; var f=modal.querySelector('input,select'); if(f){f.focus();} }
+  function closeModal(){ modal.hidden=true; document.body.style.overflow=''; if(lastFocus&&lastFocus.focus){lastFocus.focus();} }
+
+  openBtn.addEventListener('click',openModal);
+  closeEls.forEach(function(el){ el.addEventListener('click',closeModal); });
+  modal.addEventListener('click',function(e){ if(e.target===modal){ closeModal(); } });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!modal.hidden){ closeModal(); } });
+
+  statut.addEventListener('change',function(){
+    var isOther=statut.value==='autre';
+    otherWrap.hidden=!isOther;
+    otherInput.required=isOther;
+    if(isOther){ otherInput.focus(); }
+  });
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!form.checkValidity()){ form.reportValidity(); return; }
+    var g=function(n){ var el=form.elements[n]; return el&&el.value?el.value.trim():''; };
+    var statutText=(statut.value==='autre') ? ('Autre : '+g('statut_autre')) : (statut.options[statut.selectedIndex]?statut.options[statut.selectedIndex].text:'');
+    var TO='e.milbeo@gmail.com';
+    var subject='Candidature LE CLUB — '+g('prenom')+' '+g('nom');
+    var L=[
+      'NOUVELLE CANDIDATURE — LE CLUB / ESPACE MEMBRES',
+      '',
+      'Prénom : '+g('prenom'),
+      'Nom : '+g('nom'),
+      'E-mail : '+g('email'),
+      'Téléphone : '+g('tel'),
+      'Société / Enseigne : '+g('societe'),
+      'Statut / Rôle : '+statutText,
+      'Adresse : '+g('adresse'),
+      'Code postal : '+g('cp'),
+      'Ville : '+g('ville'),
+      'Pays : '+g('pays'),
+      '',
+      '— Le candidat a coché et validé la case d\'engagement (consentement).'
+    ];
+    var body=L.join('\n');
+    var gmail='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(TO)+'&su='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+    var mailto='mailto:'+TO+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+    var w=window.open(gmail,'_blank','noopener');
+    if(!w){ window.location.href=mailto; }
+  });
+})();
+</script>
 
 <script>
 (function() {
@@ -594,6 +764,6 @@
   }
 })();
 </script>
-<script src="lang.js?v=11"></script>
+<script src="lang.js?v=12"></script>
 
 </body></html>
