@@ -300,7 +300,7 @@
 
   /* ---------------- LE STYLE (charte SUNCOM : nuit, turquoise, or) ---------------- */
   var CSS = [
-    '.lgs{width:min(720px,calc(100% - 24px));max-height:calc(100% - 32px);padding:0;border:1px solid rgba(0,196,180,.35);border-radius:20px;overflow:hidden;color:#E8EDF5;',
+    '.lgs{width:min(720px,calc(100% - 24px));max-height:calc(100% - 32px);margin:auto;inset:0;padding:0;border:1px solid rgba(0,196,180,.35);border-radius:20px;overflow:hidden;color:#E8EDF5;',
     '  font-family:"DM Sans","Helvetica Neue",Arial,sans-serif;font-size:15px;line-height:1.65;text-align:left;',
     '  background:radial-gradient(700px 320px at 50% -10%,rgba(0,196,180,.18) 0%,transparent 62%),linear-gradient(180deg,#0E1A2B 0%,#0A1220 100%);',
     '  box-shadow:0 40px 90px -30px rgba(0,0,0,.85),0 0 60px -22px rgba(0,196,180,.5)}',
