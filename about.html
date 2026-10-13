@@ -100,6 +100,7 @@
     footer { padding: 1.5rem; flex-direction: column; gap: 8px; text-align: center; }
     .e2w-tags { flex-direction: column; }
   }
+.footer-legal-links{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 8px;margin:6px 0 0;font-size:11px;letter-spacing:.04em}.footer-legal-links a{color:inherit;opacity:.6;text-decoration:none}.footer-legal-links a:hover{opacity:1;text-decoration:underline}.footer-legal-links i{font-style:normal;opacity:.35}
 </style>
 </head>
 <body class="dark">
@@ -257,6 +258,7 @@
 <footer>
   <div class="footer-logo">SUN<span>COM</span></div>
   <div class="footer-meta">e2w Holding — © 2026 — Tous droits réservés</div>
+  <nav class="footer-legal-links" aria-label="Legal"><a href="?legal=mentions" data-legal-libelle="mentions">Legal notice</a><i aria-hidden="true">·</i><a href="?legal=cgu" data-legal-libelle="cgu">Terms of Use</a><i aria-hidden="true">·</i><a href="?legal=confidentialite" data-legal-libelle="confidentialite">Privacy</a></nav>
 </footer>
 
 <script>
@@ -299,5 +301,6 @@ function toggleBio(btn) {
 })();
 </script>
 <script src="lang.js?v=4"></script>
+<script src="legal.js?v=1"></script>
 </body>
 </html>
