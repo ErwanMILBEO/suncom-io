@@ -13,6 +13,7 @@
    langue. Qui ouvre la fenêtre : tout lien vers `?legal=cgu|mentions|
    confidentialite`, et l'adresse `?legal=…` à l'ouverture d'une page.
    Aucune saisie n'est posée en innerHTML : seuls les textes fixes ci-dessous.
+   Pied de la fenêtre : le pied commun des trois sites (pied.css, pied.js), depuis le 03/11/2026.
    ===================================================================== */
 (function () {
   'use strict';
@@ -25,13 +26,27 @@
   var CONTACT = '<a href="mailto:contact@suncom-lab.llc">contact@suncom-lab.llc</a>';
   var NOTA_LIEN = '<a href="https://www.suncom-lab.llc/" target="_blank" rel="noopener">suncom-lab.llc</a>';
   var DOCS = ['cgu', 'mentions', 'confidentialite'];
+  /* Pied commun suncom.estate · suncom-lab.llc · buyest.io (03/11/2026) : même gabarit que le <footer>
+     de index.html (style pied.css, textes pied.js), repris au bas de la fenêtre. */
+  var BADGE_EMIAS = '<a href="https://emias.tech" class="pc-badge" target="_blank" rel="noopener" translate="no"><span class="pc-point"></span><span class="pc-wm"><span class="pc-em">EM</span><span class="pc-ia">IA</span><span class="pc-s">S</span><span class="pc-tech">.tech</span></span></a>';
+  var PIED_COMMUN = '<div class="pc-cadre"><div class="pc">' +
+    '<div class="pc-copy"><p class="pc-titre">© 2026 ' + (SITE === 'lab' ? 'SUNCOM Lab' : 'SUNCOM') + '</p><p class="pc-pp" translate="no">⌱ A pure player company</p></div>' +
+    '<div class="pc-usa"><p class="pc-titre" data-pc-t="usa">A.I. Infrastructure USA</p><p class="pc-emias">' + BADGE_EMIAS + '</p>' +
+    '<p class="pc-doux" translate="no">© EM Intelligent Assistant System</p><p class="pc-doux pc-adr" translate="no">C/O Vercel Inc.<br>440 N Barranca Ave #4133<br>Covina, CA 91723 - USA</p></div>' +
+    '<div class="pc-eu"><p class="pc-titre" data-pc-t="eu">A.I. Infrastructure Europe</p><p class="pc-emias">' + BADGE_EMIAS + '</p>' +
+    '<p class="pc-doux" translate="no">© EM Intelligent Assistant System</p><p class="pc-doux pc-adr"><span translate="no">C/O OVHcloud<br>8 Viking Way - Erith</span><br>DA8 1EW - <span data-pc-t="ru">United Kingdom</span></p></div>' +
+    '<div class="pc-cab"><p class="pc-titre" data-pc-t="sous">Exclusive legal, financial and support services</p>' +
+    '<p class="pc-doux"><span translate="no">CABEM CONSEILS</span> - <span data-pc-t="zone">USA &amp; Europe</span></p>' +
+    '<p class="pc-liens"><a href="?legal=cgu" data-pc-t="cgu">Terms of Use</a><i aria-hidden="true">·</i><a href="?legal=mentions" data-pc-t="mentions">Legal notice</a><i aria-hidden="true">·</i><a href="?legal=confidentialite" data-pc-t="conf">Privacy</a><i aria-hidden="true">·</i><a href="mailto:contact@suncom-lab.llc" data-pc-t="ecrire">Contact us</a></p>' +
+    '<p class="pc-doux pc-droits" data-pc-t="droits">All rights reserved</p></div>' +
+    '</div></div>';
 
   /* ---------------- LES TEXTES (français = source) ---------------- */
   var T = {
     fr: {
       cartes: { cgu: 'CGU', mentions: 'Mentions légales', confidentialite: 'Confidentialité' },
       titres: { cgu: 'Conditions générales d’utilisation', mentions: 'Mentions légales', confidentialite: 'Confidentialité' },
-      maj: 'Dernière mise à jour : 13 octobre 2026', fermer: 'Fermer', distributeur: 'Distributeur Exclusif France',
+      maj: 'Dernière mise à jour : 13 octobre 2026', fermer: 'Fermer',
       mentions: [
         ['', 'Ces mentions légales s’appliquent à ' + DOMAINE + ' et à l’ensemble de ses pages, dans toutes ses langues.'],
         ['Éditeur',
@@ -75,7 +90,7 @@
     en: {
       cartes: { cgu: 'Terms of Use', mentions: 'Legal notice', confidentialite: 'Privacy' },
       titres: { cgu: 'Terms of Use', mentions: 'Legal notice', confidentialite: 'Privacy' },
-      maj: 'Last updated: 13 October 2026', fermer: 'Close', distributeur: 'Exclusive Distributor for France',
+      maj: 'Last updated: 13 October 2026', fermer: 'Close',
       mentions: [
         ['', 'This legal notice applies to ' + DOMAINE + ' and all of its pages, in every language.'],
         ['Publisher',
@@ -119,7 +134,7 @@
     es: {
       cartes: { cgu: 'Condiciones', mentions: 'Aviso legal', confidentialite: 'Privacidad' },
       titres: { cgu: 'Condiciones generales de uso', mentions: 'Aviso legal', confidentialite: 'Privacidad' },
-      maj: 'Última actualización: 13 de octubre de 2026', fermer: 'Cerrar', distributeur: 'Distribuidor exclusivo para Francia',
+      maj: 'Última actualización: 13 de octubre de 2026', fermer: 'Cerrar',
       mentions: [
         ['', 'Este aviso legal se aplica a ' + DOMAINE + ' y a todas sus páginas, en todos sus idiomas.'],
         ['Editor',
@@ -163,7 +178,7 @@
     de: {
       cartes: { cgu: 'Nutzungsbedingungen', mentions: 'Impressum', confidentialite: 'Datenschutz' },
       titres: { cgu: 'Allgemeine Nutzungsbedingungen', mentions: 'Impressum', confidentialite: 'Datenschutz' },
-      maj: 'Letzte Aktualisierung: 13. Oktober 2026', fermer: 'Schließen', distributeur: 'Exklusiver Vertriebspartner für Frankreich',
+      maj: 'Letzte Aktualisierung: 13. Oktober 2026', fermer: 'Schließen',
       mentions: [
         ['', 'Dieses Impressum gilt für ' + DOMAINE + ' und alle seine Seiten, in allen Sprachen.'],
         ['Herausgeber',
@@ -207,7 +222,7 @@
     pt: {
       cartes: { cgu: 'Condições', mentions: 'Menções legais', confidentialite: 'Privacidade' },
       titres: { cgu: 'Condições gerais de utilização', mentions: 'Menções legais', confidentialite: 'Privacidade' },
-      maj: 'Última atualização: 13 de outubro de 2026', fermer: 'Fechar', distributeur: 'Distribuidor exclusivo para França',
+      maj: 'Última atualização: 13 de outubro de 2026', fermer: 'Fechar',
       mentions: [
         ['', 'Estas menções legais aplicam-se a ' + DOMAINE + ' e a todas as suas páginas, em todos os idiomas.'],
         ['Editor',
@@ -251,7 +266,7 @@
     ru: {
       cartes: { cgu: 'Условия', mentions: 'Правовая информация', confidentialite: 'Конфиденциальность' },
       titres: { cgu: 'Условия использования', mentions: 'Правовая информация', confidentialite: 'Конфиденциальность' },
-      maj: 'Последнее обновление: 13 октября 2026 г.', fermer: 'Закрыть', distributeur: 'Эксклюзивный дистрибьютор во Франции',
+      maj: 'Последнее обновление: 13 октября 2026 г.', fermer: 'Закрыть',
       mentions: [
         ['', 'Настоящая правовая информация распространяется на ' + DOMAINE + ' и все его страницы на всех языках.'],
         ['Издатель',
@@ -326,14 +341,12 @@
     '.lgs-texte h3{margin:22px 0 8px;padding-top:16px;border-top:1px solid rgba(0,196,180,.15);font-family:"Michroma",sans-serif;font-weight:400;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#00C4B4}',
     '.lgs-texte strong{color:#fff;font-weight:600}',
     '.lgs-texte a{color:#00C4B4;text-decoration:underline;text-underline-offset:2px}',
-    '.lgs-pied{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:14px 26px 16px;border-top:1px solid rgba(0,196,180,.15);background:rgba(0,0,0,.22);font-size:10.5px;line-height:1.55;color:rgba(232,237,245,.45)}',
-    '.lgs-pied p{margin:0}',
-    '.lgs-pied b{color:rgba(232,237,245,.75);font-weight:600}',
-    '.lgs-d{text-align:right}',
-    '.lgs-point{display:inline-block;width:7px;height:7px;border-radius:50%;background:#00C4B4;vertical-align:1px}',
+    '.lgs-pied{padding:18px 26px 20px;border-top:1px solid rgba(0,196,180,.15);background:rgba(0,0,0,.22)}',
+    // Pied commun (pied.css) dans la fenêtre, toujours sombre : couleur discrète fixe, quel que soit le thème de la page.
+    '.lgs .lgs-pied .pc{color:rgba(232,237,245,.45);--pc-badge-texte:#E8EDF5}',
     '@media (max-width:620px){',
     '  .lgs-tete{padding:18px 18px 6px}.lgs-cartes{padding:8px 18px 2px;gap:8px}.lgs-texte{padding:6px 18px 18px}.lgs-pied{padding:12px 18px 14px}',
-    '  .lgs-carte{font-size:11.5px;padding:12px 4px 10px}.lgs-d{text-align:left}',
+    '  .lgs-carte{font-size:11.5px;padding:12px 4px 10px}',
     '}'
   ].join('\n');
 
@@ -382,8 +395,9 @@
       '<div class="lgs-tete"><h2 id="lgs-titre">' + t.titres[k] + '</h2><button type="button" class="lgs-fermer" aria-label="' + t.fermer + '">✕</button></div>' +
       '<div class="lgs-cartes" role="group">' + cartes + '</div>' +
       '<div class="lgs-texte">' + texte + '</div>' +
-      '<div class="lgs-pied"><p><span class="lgs-point" aria-hidden="true"></span> <b>EMIAS</b> ©EM Intelligent Assistant System<br>276 5th Ave #704 - New York<br>NY 10001 - USA</p>' +
-      '<p class="lgs-d">' + t.distributeur + '<br><b>CABEM CONSEILS</b> - RCS Rennes 848 618 831</p></div></div>';
+      '<div class="lgs-pied">' + PIED_COMMUN + '</div></div>';
+    // Textes du pied commun dans la langue du site (pied.js), la fenêtre étant construite après lui.
+    if (window.__piedTraduire) window.__piedTraduire();
     var defile = fenetre.querySelector('.lgs-in');
     if (defile) defile.scrollTop = 0;
   }

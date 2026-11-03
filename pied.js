@@ -34,6 +34,8 @@
     });
   }
 
+  // Appelé aussi par legal.js, qui construit le même pied au bas de sa fenêtre.
+  window.__piedTraduire = traduire;
   new MutationObserver(traduire).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', traduire); else traduire();
 })();
