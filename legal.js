@@ -54,10 +54,10 @@
             ? 'suncom-lab.llc est le site autonome du Think Tank SUNCOM Lab LLC, centre de R&amp;D stratégique du groupe SUNCOM, programmé pour fonctionner dans un navigateur ou sur un téléphone portable. Il ne nécessite aucune installation.'
             : 'suncom.estate est le site vitrine autonome du groupe SUNCOM, groupe immobilier mondial propulsé par l’I.A. (Buyest, EMIAS, SUNCOM Lab…), programmé pour fonctionner dans un navigateur ou sur un téléphone portable. Il ne nécessite aucune installation.')
           + ' Ses développements sont produits et exécutés par assistance I.A. via EMIAS (USA) sous contrôle d’édition et de direction de la communication internationale du cabinet CABEM CONSEILS (France).',
-          '<strong>EMIAS</strong> — EM Intelligent Assistant System<br>276 5th Ave #704, New York, NY 10001, États-Unis',
+          '<strong>EMIAS</strong> — EM Intelligent Assistant System<br>Infrastructure I.A. USA : C/O Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis<br>Infrastructure I.A. Europe : C/O OVHcloud, 8 Viking Way, Erith DA8 1EW, Royaume-Uni',
           '<strong>CABEM CONSEILS</strong> - Cabinet conseil en gestion des affaires<br>SAS au capital de 100&nbsp;€<br>RCS Rennes 848 618 831<br>Domiciliée 1, place de l’Église, 35550 Pipriac, France',
           'Toutes deux représentées par leur mandataire légal et directeur de publication<br>Monsieur Erwan Milbéo, domicilié en France : 8, rue Jean Coré à Scaër 29390',
-          'EMIAS est une intelligence artificielle hébergée chez Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis. CABEM CONSEILS en est le représentant et distributeur exclusif pour la France.',
+          'EMIAS est une intelligence artificielle hébergée chez Vercel Inc. (États-Unis) et chez OVHcloud (Erith, Royaume-Uni). CABEM CONSEILS en assure les services juridiques, financiers et supports exclusifs pour les États-Unis et l’Europe.',
           'NOTA : Tous les projets et développements EMIAS sont issus de R&amp;D stratégique et la propriété intellectuelle de Monsieur Erwan Milbéo - Fondateur, initiateur et Managing Member du Think Tank ' + NOTA_LIEN + ' (Delaware - USA).'],
         ['Hébergement', 'Le site est hébergé par Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, États-Unis — cloudflare.com.'],
         ['Propriété intellectuelle', 'Les noms, logotypes, textes et visuels du site appartiennent à leur éditeur. Leur reproduction, totale ou partielle, est interdite sans autorisation écrite préalable.'],
@@ -98,10 +98,10 @@
             ? 'suncom-lab.llc is the autonomous website of the Think Tank SUNCOM Lab LLC, the strategic R&amp;D center of the SUNCOM Group, designed to run in a web browser or on a mobile phone. It requires no installation.'
             : 'suncom.estate is the autonomous showcase website of the SUNCOM Group, a global real estate group powered by A.I. (Buyest, EMIAS, SUNCOM Lab…), designed to run in a web browser or on a mobile phone. It requires no installation.')
           + ' Its developments are produced and executed with A.I. assistance via EMIAS (USA), under the editorial control and international communications direction of the consulting firm CABEM CONSEILS (France).',
-          '<strong>EMIAS</strong> — EM Intelligent Assistant System<br>276 5th Ave #704, New York, NY 10001, USA',
+          '<strong>EMIAS</strong> — EM Intelligent Assistant System<br>A.I. Infrastructure USA: C/O Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA<br>A.I. Infrastructure Europe: C/O OVHcloud, 8 Viking Way, Erith DA8 1EW, United Kingdom',
           '<strong>CABEM CONSEILS</strong> - Business management consulting firm<br>SAS (French simplified joint-stock company) with a share capital of €100<br>RCS Rennes 848 618 831<br>Registered office: 1, place de l’Église, 35550 Pipriac, France',
           'Both represented by their legal representative and publication director<br>Mr Erwan Milbéo, residing in France: 8, rue Jean Coré, 29390 Scaër',
-          'EMIAS is an artificial intelligence hosted by Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA. CABEM CONSEILS is its representative and exclusive distributor for France.',
+          'EMIAS is an artificial intelligence hosted by Vercel Inc. (USA) and OVHcloud (Erith, United Kingdom). CABEM CONSEILS provides its exclusive legal, financial and support services for the USA and Europe.',
           'NOTE: All EMIAS projects and developments stem from strategic R&amp;D and are the intellectual property of Mr Erwan Milbéo - Founder, initiator and Managing Member of the Think Tank ' + NOTA_LIEN + ' (Delaware - USA).'],
         ['Hosting', 'The website is hosted by Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA — cloudflare.com.'],
         ['Intellectual property', 'The names, logos, texts and visuals of the website belong to their publisher. Any reproduction, in whole or in part, is prohibited without prior written authorization.'],
@@ -142,10 +142,10 @@
             ? 'suncom-lab.llc es el sitio autónomo del Think Tank SUNCOM Lab LLC, centro de I+D estratégica del grupo SUNCOM, programado para funcionar en un navegador o en un teléfono móvil. No requiere ninguna instalación.'
             : 'suncom.estate es el sitio escaparate autónomo del grupo SUNCOM, grupo inmobiliario mundial impulsado por la I.A. (Buyest, EMIAS, SUNCOM Lab…), programado para funcionar en un navegador o en un teléfono móvil. No requiere ninguna instalación.')
           + ' Sus desarrollos son producidos y ejecutados con asistencia de I.A. a través de EMIAS (EE. UU.), bajo el control editorial y la dirección de comunicación internacional del despacho CABEM CONSEILS (Francia).',
-          '<strong>EMIAS</strong> — EM Intelligent Assistant System<br>276 5th Ave #704, New York, NY 10001, Estados Unidos',
+          '<strong>EMIAS</strong> — EM Intelligent Assistant System<br>Infraestructura I.A. EE. UU.: C/O Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, Estados Unidos<br>Infraestructura I.A. Europa: C/O OVHcloud, 8 Viking Way, Erith DA8 1EW, Reino Unido',
           '<strong>CABEM CONSEILS</strong> - Consultoría en gestión empresarial<br>SAS (sociedad por acciones simplificada francesa) con un capital de 100&nbsp;€<br>RCS Rennes 848 618 831<br>Domiciliada en 1, place de l’Église, 35550 Pipriac, Francia',
           'Ambas representadas por su mandatario legal y director de la publicación<br>D. Erwan Milbéo, domiciliado en Francia: 8, rue Jean Coré, 29390 Scaër',
-          'EMIAS es una inteligencia artificial alojada en Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, Estados Unidos. CABEM CONSEILS es su representante y distribuidor exclusivo para Francia.',
+          'EMIAS es una inteligencia artificial alojada en Vercel Inc. (Estados Unidos) y en OVHcloud (Erith, Reino Unido). CABEM CONSEILS presta sus servicios jurídicos, financieros y de soporte exclusivos para Estados Unidos y Europa.',
           'NOTA: Todos los proyectos y desarrollos de EMIAS proceden de I+D estratégica y son propiedad intelectual de D. Erwan Milbéo - Fundador, iniciador y Managing Member del Think Tank ' + NOTA_LIEN + ' (Delaware - EE. UU.).'],
         ['Alojamiento', 'El sitio está alojado por Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, Estados Unidos — cloudflare.com.'],
         ['Propiedad intelectual', 'Los nombres, logotipos, textos y elementos visuales del sitio pertenecen a su editor. Queda prohibida su reproducción, total o parcial, sin autorización previa por escrito.'],
@@ -186,10 +186,10 @@
             ? 'suncom-lab.llc ist die eigenständige Website des Think Tanks SUNCOM Lab LLC, des strategischen F&amp;E-Zentrums der SUNCOM-Gruppe, programmiert für die Nutzung im Webbrowser oder auf dem Mobiltelefon. Sie erfordert keine Installation.'
             : 'suncom.estate ist die eigenständige Präsentations-Website der SUNCOM-Gruppe, einer weltweiten Immobiliengruppe mit KI (Buyest, EMIAS, SUNCOM Lab…), programmiert für die Nutzung im Webbrowser oder auf dem Mobiltelefon. Sie erfordert keine Installation.')
           + ' Ihre Entwicklungen werden mit KI-Unterstützung über EMIAS (USA) erstellt und ausgeführt, unter der redaktionellen Kontrolle und der Leitung der internationalen Kommunikation der Beratungsgesellschaft CABEM CONSEILS (Frankreich).',
-          '<strong>EMIAS</strong> — EM Intelligent Assistant System<br>276 5th Ave #704, New York, NY 10001, USA',
+          '<strong>EMIAS</strong> — EM Intelligent Assistant System<br>KI-Infrastruktur USA: C/O Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA<br>KI-Infrastruktur Europa: C/O OVHcloud, 8 Viking Way, Erith DA8 1EW, Vereinigtes Königreich',
           '<strong>CABEM CONSEILS</strong> - Unternehmensberatung für Geschäftsführung<br>SAS (französische vereinfachte Aktiengesellschaft) mit einem Stammkapital von 100&nbsp;€<br>RCS Rennes 848 618 831<br>Sitz: 1, place de l’Église, 35550 Pipriac, Frankreich',
           'Beide vertreten durch ihren gesetzlichen Vertreter und Verantwortlichen für den Inhalt<br>Herrn Erwan Milbéo, wohnhaft in Frankreich: 8, rue Jean Coré, 29390 Scaër',
-          'EMIAS ist eine künstliche Intelligenz, gehostet bei Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA. CABEM CONSEILS ist ihr Vertreter und exklusiver Vertriebspartner für Frankreich.',
+          'EMIAS ist eine künstliche Intelligenz, gehostet bei Vercel Inc. (USA) und OVHcloud (Erith, Vereinigtes Königreich). CABEM CONSEILS erbringt ihre exklusiven Rechts-, Finanz- und Supportleistungen für die USA und Europa.',
           'HINWEIS: Alle Projekte und Entwicklungen von EMIAS stammen aus strategischer F&amp;E und sind geistiges Eigentum von Herrn Erwan Milbéo - Gründer, Initiator und Managing Member des Think Tanks ' + NOTA_LIEN + ' (Delaware - USA).'],
         ['Hosting', 'Die Website wird gehostet von Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA — cloudflare.com.'],
         ['Geistiges Eigentum', 'Die Namen, Logos, Texte und Bilder der Website gehören ihrem Herausgeber. Jede vollständige oder teilweise Vervielfältigung ohne vorherige schriftliche Genehmigung ist untersagt.'],
@@ -230,10 +230,10 @@
             ? 'suncom-lab.llc é o site autónomo do Think Tank SUNCOM Lab LLC, centro de I&amp;D estratégica do grupo SUNCOM, programado para funcionar num navegador ou num telemóvel. Não requer qualquer instalação.'
             : 'suncom.estate é o site de apresentação autónomo do grupo SUNCOM, grupo imobiliário mundial movido pela I.A. (Buyest, EMIAS, SUNCOM Lab…), programado para funcionar num navegador ou num telemóvel. Não requer qualquer instalação.')
           + ' Os seus desenvolvimentos são produzidos e executados com assistência de I.A. através da EMIAS (EUA), sob o controlo editorial e a direção de comunicação internacional do gabinete CABEM CONSEILS (França).',
-          '<strong>EMIAS</strong> — EM Intelligent Assistant System<br>276 5th Ave #704, New York, NY 10001, Estados Unidos',
+          '<strong>EMIAS</strong> — EM Intelligent Assistant System<br>Infraestrutura I.A. EUA: C/O Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, Estados Unidos<br>Infraestrutura I.A. Europa: C/O OVHcloud, 8 Viking Way, Erith DA8 1EW, Reino Unido',
           '<strong>CABEM CONSEILS</strong> - Consultoria em gestão empresarial<br>SAS (sociedade por ações simplificada francesa) com capital social de 100&nbsp;€<br>RCS Rennes 848 618 831<br>Sede: 1, place de l’Église, 35550 Pipriac, França',
           'Ambas representadas pelo seu mandatário legal e diretor de publicação<br>Sr. Erwan Milbéo, residente em França: 8, rue Jean Coré, 29390 Scaër',
-          'A EMIAS é uma inteligência artificial alojada na Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, Estados Unidos. A CABEM CONSEILS é a sua representante e distribuidora exclusiva para França.',
+          'A EMIAS é uma inteligência artificial alojada na Vercel Inc. (Estados Unidos) e na OVHcloud (Erith, Reino Unido). A CABEM CONSEILS presta os seus serviços jurídicos, financeiros e de suporte exclusivos para os Estados Unidos e a Europa.',
           'NOTA: Todos os projetos e desenvolvimentos da EMIAS resultam de I&amp;D estratégica e são propriedade intelectual do Sr. Erwan Milbéo - Fundador, iniciador e Managing Member do Think Tank ' + NOTA_LIEN + ' (Delaware - EUA).'],
         ['Alojamento', 'O site é alojado pela Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, Estados Unidos — cloudflare.com.'],
         ['Propriedade intelectual', 'Os nomes, logótipos, textos e elementos visuais do site pertencem ao seu editor. É proibida a sua reprodução, total ou parcial, sem autorização prévia por escrito.'],
@@ -274,10 +274,10 @@
             ? 'suncom-lab.llc — автономный сайт аналитического центра SUNCOM Lab LLC, центра стратегических НИОКР группы SUNCOM, работающий в браузере или на мобильном телефоне. Он не требует установки.'
             : 'suncom.estate — автономный сайт-витрина группы SUNCOM, международной группы недвижимости на базе ИИ (Buyest, EMIAS, SUNCOM Lab…), работающий в браузере или на мобильном телефоне. Он не требует установки.')
           + ' Его разработки создаются и выполняются с помощью ИИ через EMIAS (США) под редакционным контролем и руководством международных коммуникаций консалтинговой компании CABEM CONSEILS (Франция).',
-          '<strong>EMIAS</strong> — EM Intelligent Assistant System<br>276 5th Ave #704, New York, NY 10001, США',
+          '<strong>EMIAS</strong> — EM Intelligent Assistant System<br>ИИ-инфраструктура США: C/O Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, США<br>ИИ-инфраструктура Европа: C/O OVHcloud, 8 Viking Way, Erith DA8 1EW, Великобритания',
           '<strong>CABEM CONSEILS</strong> — консалтинговая компания в области управления бизнесом<br>SAS (французское упрощённое акционерное общество) с уставным капиталом 100&nbsp;€<br>RCS Rennes 848 618 831<br>Юридический адрес: 1, place de l’Église, 35550 Pipriac, Франция',
           'Обе представлены своим законным представителем и директором публикации<br>г-ном Эрваном Мильбео (Erwan Milbéo), проживающим во Франции: 8, rue Jean Coré, 29390 Scaër',
-          'EMIAS — искусственный интеллект, размещённый у Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, США. CABEM CONSEILS является её представителем и эксклюзивным дистрибьютором во Франции.',
+          'EMIAS — искусственный интеллект, размещённый у Vercel Inc. (США) и OVHcloud (Erith, Великобритания). CABEM CONSEILS оказывает её эксклюзивные юридические, финансовые услуги и поддержку в США и Европе.',
           'ПРИМЕЧАНИЕ: все проекты и разработки EMIAS являются результатом стратегических НИОКР и интеллектуальной собственностью г-на Эрвана Мильбео (Erwan Milbéo) — основателя, инициатора и Managing Member аналитического центра ' + NOTA_LIEN + ' (Делавэр, США).'],
         ['Хостинг', 'Сайт размещён у Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, США — cloudflare.com.'],
         ['Интеллектуальная собственность', 'Названия, логотипы, тексты и изображения сайта принадлежат его издателю. Их полное или частичное воспроизведение без предварительного письменного разрешения запрещено.'],
