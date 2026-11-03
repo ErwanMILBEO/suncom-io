@@ -4,7 +4,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Michroma&family=DM+Sans:wght@300;400;500&family=Orbitron:wght@300;400&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Michroma&family=DM+Sans:wght@300;400;500&family=Orbitron:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pied.css?v=1">
 <title>SUNCOM — Here comes the sun</title>
 <meta name="description" content="SUNCOM - Here Comes The Sun - Global real estate group powered by A.I.: Buyest, Emias, Suncom Lab... For individuals and professionals">
 <meta name="robots" content="index, follow">
@@ -332,36 +333,11 @@
   /* FOOTER — widget EMIAS repris à l'identique de buyest.io */
   footer {
     border-top: 1px solid var(--border); padding: 2.2rem 3rem;
-    display: flex; justify-content: center; align-items: center;
     max-width: 1200px; margin: 0 auto; transition: border-color 0.4s;
   }
-  .footer-eco { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px; }
-  .footer-addr, .footer-legal {
-    font-family: 'Michroma', sans-serif; font-size: 9px; letter-spacing: 0.13em;
-    text-transform: uppercase; color: var(--footer-meta); margin: 0; line-height: 1.5;
-    transition: color 0.4s;
-  }
-  .footer-legal-row { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; }
-  .footer-emias {
-    display: inline-flex; align-items: center; gap: 4px;
-    padding: 2px 8px; margin-left: 8px;
-    background: linear-gradient(135deg, rgba(0,212,184,0.10) 0%, rgba(240,165,0,0.07) 100%);
-    border: 1px solid rgba(0,212,184,0.38); border-radius: 4px;
-    box-shadow: 0 0 8px rgba(0,212,184,0.10);
-    text-decoration: none; white-space: nowrap; vertical-align: middle;
-    transition: all 0.28s ease;
-  }
-  .footer-emias:hover { border-color: rgba(0,212,184,0.7); box-shadow: 0 0 12px rgba(0,212,184,0.22); }
-  .footer-emias .emias-dot {
-    width: 4px; height: 4px; border-radius: 50%; flex-shrink: 0;
-    background: linear-gradient(135deg,#00D4B8,#F0A500);
-    box-shadow: 0 0 3px rgba(0,212,184,0.6);
-  }
-  .footer-emias .emias-wm { font-family: 'Michroma', sans-serif; font-size: 8px; letter-spacing: 0.07em; line-height: 1; }
-  .footer-emias .e-em, .footer-emias .e-s { color: #E8EDF5; }
-  body:not(.dark) .footer-emias .e-em, body:not(.dark) .footer-emias .e-s { color: var(--text); }
-  .footer-emias .e-ia { color: #00D4B8; }
-  .footer-emias .e-ai { color: #F0A500; }
+  /* Pied commun (pied.css) : seule la couleur est propre au site — la couleur discrète de l'ancien pied */
+  .pc { color: var(--footer-meta); transition: color 0.4s; }
+  body:not(.dark) .pc { --pc-badge-texte: var(--text); }
 
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes scrollPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
@@ -373,9 +349,8 @@
     .grid-section { padding: 0 0 4rem; }
     .grid { grid-template-columns: 1fr; }
     .bloc { padding: 2rem; }
-    footer { padding: 1.5rem; flex-direction: column; gap: 8px; text-align: center; }
+    footer { padding: 1.5rem; }
   }
-.footer-legal-links{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 8px;margin:6px 0 0;font-size:11px;letter-spacing:.04em}.footer-legal-links a{color:inherit;opacity:.6;text-decoration:none}.footer-legal-links a:hover{opacity:1;text-decoration:underline}.footer-legal-links i{font-style:normal;opacity:.35}
 </style>
 </head>
 <body class="dark">
@@ -542,17 +517,28 @@
 </div>
 
 <footer>
-  <div class="footer-eco">
-    <p class="footer-addr">SUNCOM Group real estate A.I. · 276 5th Ave #704 · New York, NY 10001 · USA</p>
-    <div class="footer-legal-row">
-      <p class="footer-legal">© 2026 EM Intelligent Assistant System · <span data-i18n="footer_rights">Tous droits réservés</span></p>
-      <a href="https://buyest.io/emias/" class="footer-emias" target="_blank" rel="noopener">
-        <span class="emias-dot"></span>
-        <span class="emias-wm"><span class="e-em">EM</span><span class="e-ia">IA</span><span class="e-s">S</span><span class="e-ai">.ai</span></span>
-      </a>
+  <!-- Pied commun suncom.estate · suncom-lab.llc · buyest.io (03/11/2026) : style pied.css, traductions pied.js -->
+  <div class="pc-cadre"><div class="pc">
+    <div class="pc-copy"><p class="pc-titre">© 2026 SUNCOM</p><p class="pc-pp" translate="no">⌱ A pure player company</p></div>
+    <div class="pc-usa">
+      <p class="pc-titre" data-pc-t="usa">A.I. Infrastructure USA</p>
+      <p class="pc-emias"><a href="https://emias.tech" class="pc-badge" target="_blank" rel="noopener" translate="no"><span class="pc-point"></span><span class="pc-wm"><span class="pc-em">EM</span><span class="pc-ia">IA</span><span class="pc-s">S</span><span class="pc-tech">.tech</span></span></a></p>
+      <p class="pc-doux" translate="no">© EM Intelligent Assistant System</p>
+      <p class="pc-doux pc-adr" translate="no">C/O Vercel Inc.<br>440 N Barranca Ave #4133<br>Covina, CA 91723 - USA</p>
     </div>
-      <p class="footer-legal-links"><a href="?legal=mentions" data-legal-libelle="mentions">Legal notice</a><i aria-hidden="true">·</i><a href="?legal=cgu" data-legal-libelle="cgu">Terms of Use</a><i aria-hidden="true">·</i><a href="?legal=confidentialite" data-legal-libelle="confidentialite">Privacy</a></p>
-  </div>
+    <div class="pc-eu">
+      <p class="pc-titre" data-pc-t="eu">A.I. Infrastructure Europe</p>
+      <p class="pc-emias"><a href="https://emias.tech" class="pc-badge" target="_blank" rel="noopener" translate="no"><span class="pc-point"></span><span class="pc-wm"><span class="pc-em">EM</span><span class="pc-ia">IA</span><span class="pc-s">S</span><span class="pc-tech">.tech</span></span></a></p>
+      <p class="pc-doux" translate="no">© EM Intelligent Assistant System</p>
+      <p class="pc-doux pc-adr"><span translate="no">C/O OVHcloud<br>8 Viking Way - Erith</span><br>DA8 1EW - <span data-pc-t="ru">United Kingdom</span></p>
+    </div>
+    <div class="pc-cab">
+      <p class="pc-titre" data-pc-t="sous">Exclusive legal, financial and support services</p>
+      <p class="pc-doux"><span translate="no">CABEM CONSEILS</span> - <span data-pc-t="zone">USA &amp; Europe</span></p>
+      <p class="pc-liens"><a href="?legal=cgu" data-pc-t="cgu">Terms of Use</a><i aria-hidden="true">·</i><a href="?legal=mentions" data-pc-t="mentions">Legal notice</a><i aria-hidden="true">·</i><a href="?legal=confidentialite" data-pc-t="conf">Privacy</a><i aria-hidden="true">·</i><a href="mailto:contact@suncom-lab.llc" data-pc-t="ecrire">Contact us</a></p>
+      <p class="pc-doux pc-droits" data-pc-t="droits">All rights reserved</p>
+    </div>
+  </div></div>
 </footer>
 
 <!-- ===== Modale LE CLUB — formulaire de candidature ===== -->
@@ -769,4 +755,5 @@
 <script src="lang.js?v=12"></script>
 
 <script src="legal.js?v=2"></script>
+<script src="pied.js?v=1"></script>
 </body></html>

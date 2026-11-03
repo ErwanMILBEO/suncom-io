@@ -1,0 +1,63 @@
+/* =====================================================================
+   PIED DE PAGE COMMUN (03/11/2026, demande d'Erwan) — suncom.estate,
+   suncom-lab.llc et buyest.io ont EXACTEMENT le même bloc : mêmes tailles,
+   même disposition, mêmes textes. Modèle : le pied de waterstart.team.
+
+   ⚠️ FICHIER IDENTIQUE dans suncom-io/pied.css et
+   suncom-lab-llc/public/pied.css ; recopié tel quel dans la section
+   « PIED COMMUN » de buyest (app/globals.css). Toute correction : les trois.
+
+   Seule la couleur vient de chaque site (couleur discrète de son pied,
+   posée sur .pc par la page). Les traductions sont dans pied.js
+   (buyest : messages/<langue>.json, clés footer.pc_*). Les liens sont des
+   <a> (sites SUNCOM) ou des <button> (buyest, fenêtre légale) : même aspect.
+
+   Disposition, selon la largeur du bloc :
+   - large : 4 colonnes (© · USA · Europe · services) ; « Tous droits
+     réservés » sur la même ligne que la dernière ligne des deux adresses ;
+   - moyen : © et services en haut, les deux adresses côte à côte dessous ;
+   - téléphone : ©, les deux adresses côte à côte, puis les services.
+   ===================================================================== */
+.pc-cadre{container-type:inline-size;width:100%}
+.pc{max-width:1180px;margin:0 auto;display:grid;gap:22px 40px;text-align:left;
+  font-family:var(--pc-sans,'Public Sans'),sans-serif;font-size:10.4px;line-height:1.6;font-weight:400;letter-spacing:normal;text-transform:none;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr) fit-content(360px);
+  grid-template-areas:"copy usa eu cab"}
+.pc p{margin:0;padding:0;font:inherit;color:inherit;letter-spacing:inherit;text-transform:none}
+.pc-copy{grid-area:copy}.pc-usa{grid-area:usa}.pc-eu{grid-area:eu}.pc-cab{grid-area:cab;text-align:right}
+.pc .pc-titre{font-size:10.8px;font-weight:600}
+.pc .pc-pp{font-family:var(--pc-michroma,'Michroma'),sans-serif;font-size:8.6px;letter-spacing:.08em;margin-top:2px}
+.pc .pc-doux{font-size:10px}
+.pc .pc-emias{margin:4px 0 3px;line-height:1}
+/* Sur grand écran, la dernière ligne de chaque colonne est poussée en bas :
+   « Tous droits réservés » tombe sur la ligne « USA » / « Royaume-Uni ». */
+.pc-usa,.pc-eu,.pc-cab{display:flex;flex-direction:column}
+.pc .pc-adr,.pc .pc-droits{margin-top:auto}
+.pc .pc-liens{display:flex;flex-wrap:nowrap;white-space:nowrap;justify-content:flex-end;align-items:center;margin-top:4px}
+.pc .pc-liens a,.pc .pc-liens button{display:inline-flex;align-items:center;min-height:28px;padding:0 6px;margin:0;border:0;background:none;cursor:pointer;font:inherit;font-size:9.6px;line-height:1.6;color:inherit;text-decoration:none;opacity:1}
+.pc .pc-liens a:hover,.pc .pc-liens button:hover{text-decoration:underline;text-underline-offset:4px}
+.pc .pc-liens a:focus-visible,.pc .pc-liens button:focus-visible{outline:2px solid currentColor;outline-offset:2px;border-radius:4px}
+.pc .pc-liens>:last-child{padding-right:0}
+.pc .pc-liens i{font-style:normal;opacity:.5}
+
+/* Petit logo EMIAS.tech (même pastille que l'ancien pied de suncom.estate) */
+.pc-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;background:linear-gradient(135deg,rgba(0,212,184,.10) 0%,rgba(240,165,0,.07) 100%);border:1px solid rgba(0,212,184,.38);border-radius:4px;box-shadow:0 0 8px rgba(0,212,184,.10);text-decoration:none;white-space:nowrap;transition:all .28s ease}
+.pc-badge:hover{border-color:rgba(0,212,184,.7);box-shadow:0 0 12px rgba(0,212,184,.22)}
+.pc-badge .pc-point{width:4px;height:4px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,#00D4B8,#F0A500);box-shadow:0 0 3px rgba(0,212,184,.6)}
+.pc-badge .pc-wm{font-family:var(--pc-michroma,'Michroma'),sans-serif;font-size:8px;letter-spacing:.07em;line-height:1}
+.pc-badge .pc-em,.pc-badge .pc-s{color:var(--pc-badge-texte,#E8EDF5)}
+.pc-badge .pc-ia{color:#00D4B8}
+.pc-badge .pc-tech{color:#F0A500}
+
+@container (max-width:820px){
+  .pc{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"copy cab" "usa eu"}
+  .pc .pc-liens{flex-wrap:wrap;white-space:normal}
+  .pc .pc-liens a,.pc .pc-liens button{min-height:40px}
+  .pc .pc-adr,.pc .pc-droits{margin-top:0}
+}
+@container (max-width:600px){
+  .pc{gap:22px 20px;grid-template-areas:"copy copy" "usa eu" "cab cab"}
+  .pc-cab{text-align:left}
+  .pc .pc-liens{justify-content:flex-start}
+  .pc .pc-liens>:first-child{padding-left:0}
+}
