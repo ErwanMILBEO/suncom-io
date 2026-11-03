@@ -13,12 +13,12 @@
   window.__piedCommun = true;
 
   var T = {
-    fr: { usa: 'Infrastructure I.A. USA', eu: 'Infrastructure I.A. Europe', ru: 'Royaume-Uni', sous: 'Services juridiques, financiers et supports exclusifs', zone: 'USA & Europe', cgu: 'CGU', mentions: 'Mentions légales', conf: 'Confidentialité', ecrire: 'Nous écrire', droits: 'Tous droits réservés' },
-    en: { usa: 'A.I. Infrastructure USA', eu: 'A.I. Infrastructure Europe', ru: 'United Kingdom', sous: 'Exclusive legal, financial and support services', zone: 'USA & Europe', cgu: 'Terms of Use', mentions: 'Legal notice', conf: 'Privacy', ecrire: 'Contact us', droits: 'All rights reserved' },
-    de: { usa: 'KI-Infrastruktur USA', eu: 'KI-Infrastruktur Europa', ru: 'Vereinigtes Königreich', sous: 'Exklusive Rechts-, Finanz- und Supportleistungen', zone: 'USA & Europa', cgu: 'AGB', mentions: 'Impressum', conf: 'Datenschutz', ecrire: 'Kontakt', droits: 'Alle Rechte vorbehalten' },
-    es: { usa: 'Infraestructura I.A. EE. UU.', eu: 'Infraestructura I.A. Europa', ru: 'Reino Unido', sous: 'Servicios jurídicos, financieros y de soporte exclusivos', zone: 'EE. UU. y Europa', cgu: 'Condiciones de uso', mentions: 'Aviso legal', conf: 'Privacidad', ecrire: 'Escríbanos', droits: 'Todos los derechos reservados' },
-    pt: { usa: 'Infraestrutura I.A. EUA', eu: 'Infraestrutura I.A. Europa', ru: 'Reino Unido', sous: 'Serviços jurídicos, financeiros e de suporte exclusivos', zone: 'EUA e Europa', cgu: 'Termos de uso', mentions: 'Aviso legal', conf: 'Privacidade', ecrire: 'Escreva-nos', droits: 'Todos os direitos reservados' },
-    ru: { usa: 'ИИ-инфраструктура США', eu: 'ИИ-инфраструктура Европа', ru: 'Великобритания', sous: 'Эксклюзивные юридические, финансовые услуги и поддержка', zone: 'США и Европа', cgu: 'Условия', mentions: 'Реквизиты', conf: 'Конфиденциальность', ecrire: 'Контакты', droits: 'Все права защищены' }
+    fr: { usa: 'Infrastructure I.A. USA', eu: 'Infrastructure I.A. Europe', ru: 'Royaume-Uni', sous: 'Services juridiques, financiers et supports', zone: 'USA & Europe', cgu: 'CGU', mentions: 'Mentions légales', conf: 'Confidentialité', ecrire: 'Nous écrire', droits: 'Tous droits réservés' },
+    en: { usa: 'A.I. Infrastructure USA', eu: 'A.I. Infrastructure Europe', ru: 'United Kingdom', sous: 'Legal, financial and support services', zone: 'USA & Europe', cgu: 'Terms of Use', mentions: 'Legal notice', conf: 'Privacy', ecrire: 'Contact us', droits: 'All rights reserved' },
+    de: { usa: 'KI-Infrastruktur USA', eu: 'KI-Infrastruktur Europa', ru: 'Vereinigtes Königreich', sous: 'Rechts-, Finanz- und Supportleistungen', zone: 'USA & Europa', cgu: 'AGB', mentions: 'Impressum', conf: 'Datenschutz', ecrire: 'Kontakt', droits: 'Alle Rechte vorbehalten' },
+    es: { usa: 'Infraestructura I.A. EE. UU.', eu: 'Infraestructura I.A. Europa', ru: 'Reino Unido', sous: 'Servicios jurídicos, financieros y de soporte', zone: 'EE. UU. y Europa', cgu: 'Condiciones de uso', mentions: 'Aviso legal', conf: 'Privacidad', ecrire: 'Escríbanos', droits: 'Todos los derechos reservados' },
+    pt: { usa: 'Infraestrutura I.A. EUA', eu: 'Infraestrutura I.A. Europa', ru: 'Reino Unido', sous: 'Serviços jurídicos, financeiros e de suporte', zone: 'EUA e Europa', cgu: 'Termos de uso', mentions: 'Aviso legal', conf: 'Privacidade', ecrire: 'Escreva-nos', droits: 'Todos os direitos reservados' },
+    ru: { usa: 'ИИ-инфраструктура США', eu: 'ИИ-инфраструктура Европа', ru: 'Великобритания', sous: 'Юридические, финансовые услуги и поддержка', zone: 'США и Европа', cgu: 'Условия', mentions: 'Реквизиты', conf: 'Конфиденциальность', ecrire: 'Контакты', droits: 'Все права защищены' }
   };
 
   function langue() {

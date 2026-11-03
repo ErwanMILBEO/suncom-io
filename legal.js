@@ -35,7 +35,7 @@
     '<p class="pc-doux" translate="no">© EM Intelligent Assistant System</p><p class="pc-doux pc-adr" translate="no">C/O Vercel Inc.<br>440 N Barranca Ave #4133<br>Covina, CA 91723 - USA</p></div>' +
     '<div class="pc-eu"><p class="pc-titre" data-pc-t="eu">A.I. Infrastructure Europe</p><p class="pc-emias">' + BADGE_EMIAS + '</p>' +
     '<p class="pc-doux" translate="no">© EM Intelligent Assistant System</p><p class="pc-doux pc-adr"><span translate="no">C/O OVHcloud<br>8 Viking Way - Erith</span><br>DA8 1EW - <span data-pc-t="ru">United Kingdom</span></p></div>' +
-    '<div class="pc-cab"><p class="pc-titre" data-pc-t="sous">Exclusive legal, financial and support services</p>' +
+    '<div class="pc-cab"><p class="pc-titre" data-pc-t="sous">Legal, financial and support services</p>' +
     '<p class="pc-doux"><span translate="no">CABEM CONSEILS</span> - <span data-pc-t="zone">USA &amp; Europe</span></p>' +
     '<p class="pc-liens"><a href="?legal=cgu" data-pc-t="cgu">Terms of Use</a><i aria-hidden="true">·</i><a href="?legal=mentions" data-pc-t="mentions">Legal notice</a><i aria-hidden="true">·</i><a href="?legal=confidentialite" data-pc-t="conf">Privacy</a><i aria-hidden="true">·</i><a href="mailto:contact@suncom-lab.llc" data-pc-t="ecrire">Contact us</a></p>' +
     '<p class="pc-doux pc-droits" data-pc-t="droits">All rights reserved</p></div>' +
@@ -57,7 +57,7 @@
           '<strong>EMIAS</strong> — EM Intelligent Assistant System<br>Infrastructure I.A. USA : C/O Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis<br>Infrastructure I.A. Europe : C/O OVHcloud, 8 Viking Way, Erith DA8 1EW, Royaume-Uni',
           '<strong>CABEM CONSEILS</strong> - Cabinet conseil en gestion des affaires<br>SAS au capital de 100&nbsp;€<br>RCS Rennes 848 618 831<br>Domiciliée 1, place de l’Église, 35550 Pipriac, France',
           'Toutes deux représentées par leur mandataire légal et directeur de publication<br>Monsieur Erwan Milbéo, domicilié en France : 8, rue Jean Coré à Scaër 29390',
-          'EMIAS est une intelligence artificielle hébergée chez Vercel Inc. (États-Unis) et chez OVHcloud (Erith, Royaume-Uni). CABEM CONSEILS en assure les services juridiques, financiers et supports exclusifs pour les États-Unis et l’Europe.',
+          'EMIAS est une intelligence artificielle hébergée chez Vercel Inc. (États-Unis) et chez OVHcloud (Erith, Royaume-Uni). CABEM CONSEILS en assure les services juridiques, financiers et supports pour les États-Unis et l’Europe.',
           'NOTA : Tous les projets et développements EMIAS sont issus de R&amp;D stratégique et la propriété intellectuelle de Monsieur Erwan Milbéo - Fondateur, initiateur et Managing Member du Think Tank ' + NOTA_LIEN + ' (Delaware - USA).'],
         ['Hébergement', 'Le site est hébergé par Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, États-Unis — cloudflare.com.'],
         ['Propriété intellectuelle', 'Les noms, logotypes, textes et visuels du site appartiennent à leur éditeur. Leur reproduction, totale ou partielle, est interdite sans autorisation écrite préalable.'],
@@ -101,7 +101,7 @@
           '<strong>EMIAS</strong> — EM Intelligent Assistant System<br>A.I. Infrastructure USA: C/O Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA<br>A.I. Infrastructure Europe: C/O OVHcloud, 8 Viking Way, Erith DA8 1EW, United Kingdom',
           '<strong>CABEM CONSEILS</strong> - Business management consulting firm<br>SAS (French simplified joint-stock company) with a share capital of €100<br>RCS Rennes 848 618 831<br>Registered office: 1, place de l’Église, 35550 Pipriac, France',
           'Both represented by their legal representative and publication director<br>Mr Erwan Milbéo, residing in France: 8, rue Jean Coré, 29390 Scaër',
-          'EMIAS is an artificial intelligence hosted by Vercel Inc. (USA) and OVHcloud (Erith, United Kingdom). CABEM CONSEILS provides its exclusive legal, financial and support services for the USA and Europe.',
+          'EMIAS is an artificial intelligence hosted by Vercel Inc. (USA) and OVHcloud (Erith, United Kingdom). CABEM CONSEILS provides its legal, financial and support services for the USA and Europe.',
           'NOTE: All EMIAS projects and developments stem from strategic R&amp;D and are the intellectual property of Mr Erwan Milbéo - Founder, initiator and Managing Member of the Think Tank ' + NOTA_LIEN + ' (Delaware - USA).'],
         ['Hosting', 'The website is hosted by Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA — cloudflare.com.'],
         ['Intellectual property', 'The names, logos, texts and visuals of the website belong to their publisher. Any reproduction, in whole or in part, is prohibited without prior written authorization.'],
@@ -145,7 +145,7 @@
           '<strong>EMIAS</strong> — EM Intelligent Assistant System<br>Infraestructura I.A. EE. UU.: C/O Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, Estados Unidos<br>Infraestructura I.A. Europa: C/O OVHcloud, 8 Viking Way, Erith DA8 1EW, Reino Unido',
           '<strong>CABEM CONSEILS</strong> - Consultoría en gestión empresarial<br>SAS (sociedad por acciones simplificada francesa) con un capital de 100&nbsp;€<br>RCS Rennes 848 618 831<br>Domiciliada en 1, place de l’Église, 35550 Pipriac, Francia',
           'Ambas representadas por su mandatario legal y director de la publicación<br>D. Erwan Milbéo, domiciliado en Francia: 8, rue Jean Coré, 29390 Scaër',
-          'EMIAS es una inteligencia artificial alojada en Vercel Inc. (Estados Unidos) y en OVHcloud (Erith, Reino Unido). CABEM CONSEILS presta sus servicios jurídicos, financieros y de soporte exclusivos para Estados Unidos y Europa.',
+          'EMIAS es una inteligencia artificial alojada en Vercel Inc. (Estados Unidos) y en OVHcloud (Erith, Reino Unido). CABEM CONSEILS presta sus servicios jurídicos, financieros y de soporte para Estados Unidos y Europa.',
           'NOTA: Todos los proyectos y desarrollos de EMIAS proceden de I+D estratégica y son propiedad intelectual de D. Erwan Milbéo - Fundador, iniciador y Managing Member del Think Tank ' + NOTA_LIEN + ' (Delaware - EE. UU.).'],
         ['Alojamiento', 'El sitio está alojado por Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, Estados Unidos — cloudflare.com.'],
         ['Propiedad intelectual', 'Los nombres, logotipos, textos y elementos visuales del sitio pertenecen a su editor. Queda prohibida su reproducción, total o parcial, sin autorización previa por escrito.'],
@@ -189,7 +189,7 @@
           '<strong>EMIAS</strong> — EM Intelligent Assistant System<br>KI-Infrastruktur USA: C/O Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA<br>KI-Infrastruktur Europa: C/O OVHcloud, 8 Viking Way, Erith DA8 1EW, Vereinigtes Königreich',
           '<strong>CABEM CONSEILS</strong> - Unternehmensberatung für Geschäftsführung<br>SAS (französische vereinfachte Aktiengesellschaft) mit einem Stammkapital von 100&nbsp;€<br>RCS Rennes 848 618 831<br>Sitz: 1, place de l’Église, 35550 Pipriac, Frankreich',
           'Beide vertreten durch ihren gesetzlichen Vertreter und Verantwortlichen für den Inhalt<br>Herrn Erwan Milbéo, wohnhaft in Frankreich: 8, rue Jean Coré, 29390 Scaër',
-          'EMIAS ist eine künstliche Intelligenz, gehostet bei Vercel Inc. (USA) und OVHcloud (Erith, Vereinigtes Königreich). CABEM CONSEILS erbringt ihre exklusiven Rechts-, Finanz- und Supportleistungen für die USA und Europa.',
+          'EMIAS ist eine künstliche Intelligenz, gehostet bei Vercel Inc. (USA) und OVHcloud (Erith, Vereinigtes Königreich). CABEM CONSEILS erbringt ihre Rechts-, Finanz- und Supportleistungen für die USA und Europa.',
           'HINWEIS: Alle Projekte und Entwicklungen von EMIAS stammen aus strategischer F&amp;E und sind geistiges Eigentum von Herrn Erwan Milbéo - Gründer, Initiator und Managing Member des Think Tanks ' + NOTA_LIEN + ' (Delaware - USA).'],
         ['Hosting', 'Die Website wird gehostet von Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA — cloudflare.com.'],
         ['Geistiges Eigentum', 'Die Namen, Logos, Texte und Bilder der Website gehören ihrem Herausgeber. Jede vollständige oder teilweise Vervielfältigung ohne vorherige schriftliche Genehmigung ist untersagt.'],
@@ -233,7 +233,7 @@
           '<strong>EMIAS</strong> — EM Intelligent Assistant System<br>Infraestrutura I.A. EUA: C/O Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, Estados Unidos<br>Infraestrutura I.A. Europa: C/O OVHcloud, 8 Viking Way, Erith DA8 1EW, Reino Unido',
           '<strong>CABEM CONSEILS</strong> - Consultoria em gestão empresarial<br>SAS (sociedade por ações simplificada francesa) com capital social de 100&nbsp;€<br>RCS Rennes 848 618 831<br>Sede: 1, place de l’Église, 35550 Pipriac, França',
           'Ambas representadas pelo seu mandatário legal e diretor de publicação<br>Sr. Erwan Milbéo, residente em França: 8, rue Jean Coré, 29390 Scaër',
-          'A EMIAS é uma inteligência artificial alojada na Vercel Inc. (Estados Unidos) e na OVHcloud (Erith, Reino Unido). A CABEM CONSEILS presta os seus serviços jurídicos, financeiros e de suporte exclusivos para os Estados Unidos e a Europa.',
+          'A EMIAS é uma inteligência artificial alojada na Vercel Inc. (Estados Unidos) e na OVHcloud (Erith, Reino Unido). A CABEM CONSEILS presta os seus serviços jurídicos, financeiros e de suporte para os Estados Unidos e a Europa.',
           'NOTA: Todos os projetos e desenvolvimentos da EMIAS resultam de I&amp;D estratégica e são propriedade intelectual do Sr. Erwan Milbéo - Fundador, iniciador e Managing Member do Think Tank ' + NOTA_LIEN + ' (Delaware - EUA).'],
         ['Alojamento', 'O site é alojado pela Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, Estados Unidos — cloudflare.com.'],
         ['Propriedade intelectual', 'Os nomes, logótipos, textos e elementos visuais do site pertencem ao seu editor. É proibida a sua reprodução, total ou parcial, sem autorização prévia por escrito.'],
@@ -277,7 +277,7 @@
           '<strong>EMIAS</strong> — EM Intelligent Assistant System<br>ИИ-инфраструктура США: C/O Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, США<br>ИИ-инфраструктура Европа: C/O OVHcloud, 8 Viking Way, Erith DA8 1EW, Великобритания',
           '<strong>CABEM CONSEILS</strong> — консалтинговая компания в области управления бизнесом<br>SAS (французское упрощённое акционерное общество) с уставным капиталом 100&nbsp;€<br>RCS Rennes 848 618 831<br>Юридический адрес: 1, place de l’Église, 35550 Pipriac, Франция',
           'Обе представлены своим законным представителем и директором публикации<br>г-ном Эрваном Мильбео (Erwan Milbéo), проживающим во Франции: 8, rue Jean Coré, 29390 Scaër',
-          'EMIAS — искусственный интеллект, размещённый у Vercel Inc. (США) и OVHcloud (Erith, Великобритания). CABEM CONSEILS оказывает её эксклюзивные юридические, финансовые услуги и поддержку в США и Европе.',
+          'EMIAS — искусственный интеллект, размещённый у Vercel Inc. (США) и OVHcloud (Erith, Великобритания). CABEM CONSEILS оказывает её юридические, финансовые услуги и поддержку в США и Европе.',
           'ПРИМЕЧАНИЕ: все проекты и разработки EMIAS являются результатом стратегических НИОКР и интеллектуальной собственностью г-на Эрвана Мильбео (Erwan Milbéo) — основателя, инициатора и Managing Member аналитического центра ' + NOTA_LIEN + ' (Делавэр, США).'],
         ['Хостинг', 'Сайт размещён у Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, США — cloudflare.com.'],
         ['Интеллектуальная собственность', 'Названия, логотипы, тексты и изображения сайта принадлежат его издателю. Их полное или частичное воспроизведение без предварительного письменного разрешения запрещено.'],
